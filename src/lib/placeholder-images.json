@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "1",
+      "description": "Fintech Startup",
+      "imageUrl": "https://picsum.photos/seed/tech-startup/600/400",
+      "imageHint": "tech startup"
+    },
+    {
+      "id": "2",
+      "description": "Ecommerce Brand",
+      "imageUrl": "https://picsum.photos/seed/ecommerce-brand/600/400",
+      "imageHint": "ecommerce brand"
+    },
+    {
+      "id": "3",
+      "description": "SaaS Platform",
+      "imageUrl": "https://picsum.photos/seed/saas-company/600/400",
+      "imageHint": "saas company"
+    },
+    {
+      "id": "4",
+      "description": "HealthTech Innovator",
+      "imageUrl": "https://picsum.photos/seed/health-tech/600/400",
+      "imageHint": "tech startup"
+    },
+    {
+      "id": "5",
+      "description": "Fashion Retailer",
+      "imageUrl": "https://picsum.photos/seed/fashion-retail/600/400",
+      "imageHint": "ecommerce brand"
+    }
+  ]
 }
