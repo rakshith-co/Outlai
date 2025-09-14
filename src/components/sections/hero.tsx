@@ -7,9 +7,19 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Hero() {
   return (
     <section className="relative w-full py-24 md:py-32 lg:py-40 bg-background overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute h-[500px] w-[500px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 left-1/4 top-1/2"></div>
-        <div className="absolute h-[400px] w-[400px] bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 right-1/4 bottom-1/2"></div>
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-repeat"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
+          }}
+        />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute h-[500px] w-[500px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 left-1/4 top-1/2"></div>
+          <div className="absolute h-[400px] w-[400px] bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 right-1/4 bottom-1/2"></div>
+        </div>
       </div>
       <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className={cn("font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight")}>
