@@ -5,13 +5,6 @@ import { cn } from '@/lib/utils';
 import { Linkedin, Twitter, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
-const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Work' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '/contact', label: 'Contact' },
-];
-
 const socialLinks = [
   { href: '#', icon: <Twitter className="h-5 w-5" /> },
   { href: '#', icon: <Linkedin className="h-5 w-5" /> },
@@ -25,10 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1 space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Icons.logo className="h-7 w-7" />
-              <span className={cn('font-headline text-2xl font-medium')}>
-                x Studio
-              </span>
+              <Icons.logo className="h-7 w-auto" />
             </Link>
             <p className="pr-4">Launch faster. Sell sooner.</p>
           </div>
@@ -57,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50">
-          <p>&copy; {new Date().getFullYear()} x Studio, Inc. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Outlai, Inc. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <Link href="#" className="hover:text-foreground">Privacy Policy</Link>
             <Link href="#" className="hover:text-foreground">Terms of Service</Link>

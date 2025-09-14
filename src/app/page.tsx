@@ -1,12 +1,11 @@
 import { Hero } from '@/components/sections/hero';
 import { Features } from '@/components/sections/features';
 import { HowItWorks } from '@/components/sections/how-it-works';
-import { Pricing } from '@/components/sections/pricing';
 import { Cta } from '@/components/sections/cta';
-import { SocialProof } from '@/components/sections/social-proof';
 import { CaseStudy } from '@/components/sections/case-study';
 import { Testimonials } from '@/components/sections/testimonials';
 import { TechSpecs } from '@/components/sections/tech-specs';
+import { ServicesOverview } from '@/components/sections/services-overview';
 
 export default function Home() {
   return (
@@ -15,9 +14,8 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <CaseStudy />
-      <Pricing />
+      <ServicesOverview />
       <Testimonials />
-      <SocialProof />
       <TechSpecs />
       <Cta />
     </div>

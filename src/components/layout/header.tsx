@@ -13,7 +13,6 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#work', label: 'Work' },
-  { href: '#pricing', label: 'Pricing' },
 ];
 
 export default function Header() {
@@ -39,10 +38,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
-            <Icons.logo className="h-7 w-7" />
-            <span className={cn('font-headline text-2xl font-medium tracking-tight')}>
-              x Studio
-            </span>
+            <Icons.logo className="h-7 w-auto" />
           </Link>
           
           <nav className="hidden md:flex items-center gap-1">
@@ -69,8 +65,7 @@ export default function Header() {
                 <div className="flex flex-col h-full">
                     <div className="flex justify-between items-center border-b pb-4">
                         <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
-                            <Icons.logo className="h-7 w-7" />
-                            <span className="font-headline text-2xl font-medium">x Studio</span>
+                            <Icons.logo className="h-7 w-auto" />
                         </Link>
                         <Button variant="ghost" size="icon" onClick={() => setSheetOpen(false)}>
                             <X className="h-6 w-6" />
@@ -92,7 +87,7 @@ export default function Header() {
                             onClick={() => setSheetOpen(false)}
                             className={cn('font-light text-foreground/80 hover:text-foreground', pathname === '/contact' && 'font-medium text-foreground')}
                         >
-                            Contact
+                            Contact Sales
                         </Link>
                     </nav>
                     <div className="mt-auto pt-8">

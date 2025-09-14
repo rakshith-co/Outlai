@@ -5,11 +5,11 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
-const APP_NAME = "x Studio";
-const APP_DESCRIPTION = "x Studio delivers landing pages in 24 hours, agent-optimized SEO, and fast-turn creative + managed social. Launch faster—get a staging link by tomorrow morning.";
+const APP_NAME = "Outlai";
+const APP_DESCRIPTION = "Outlai delivers landing pages in 24 hours, agent-optimized SEO, and fast-turn creative + managed social. Launch faster—get a staging link by tomorrow morning.";
 
 export const metadata: Metadata = {
-  title: 'x Studio — 24h Landing Pages • Agent-Ready SEO • Fast Creatives',
+  title: 'Outlai — 24h Landing Pages • Agent-Ready SEO • Fast Creatives',
   description: APP_DESCRIPTION,
   applicationName: APP_NAME,
   appleWebApp: {
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    url: 'https://outlie.studio',
-    title: 'x Studio — 24h Landing Pages • Agent-Ready SEO • Fast Creatives',
+    url: 'https://outlai.studio',
+    title: 'Outlai — 24h Landing Pages • Agent-Ready SEO • Fast Creatives',
     description: APP_DESCRIPTION,
     images: {
       url: '/og-image.png',
-      alt: 'x Studio Logo',
+      alt: 'Outlai Logo',
     },
   },
   twitter: {
-    creator: '@xstudio',
+    creator: '@outlai',
     card: 'summary_large_image',
   },
   icons: {
@@ -60,16 +60,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "x Studio",
-            "url": "https://outlie.studio",
-            "logo": "https://outlie.studio/logo.png",
-            "description": "x Studio delivers landing pages in 24 hours, agent-optimized SEO, and fast-turn creative + managed social.",
+            "name": "Outlai",
+            "url": "https://outlai.studio",
+            "logo": "https://outlai.studio/logo.png",
+            "description": "Outlai delivers landing pages in 24 hours, agent-optimized SEO, and fast-turn creative + managed social.",
             "sameAs": [],
             "potentialAction": {
               "@type": "OrderAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://outlie.studio/contact",
+                "urlTemplate": "https://outlai.studio/contact",
                 "actionPlatform": [
                   "http://schema.org/DesktopWebPlatform",
                   "http://schema.org/IOSPlatform",
