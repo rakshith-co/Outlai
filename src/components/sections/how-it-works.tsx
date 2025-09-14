@@ -1,19 +1,28 @@
-import React from 'react';
-import { Target, Rocket, Check, Plus, FileText, BrainCircuit, Zap, Bot, Send, Scaling } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+"use client";
 
-const Step = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-  <Card className="w-full p-6 glassmorphic">
-    <div className="flex items-center space-x-4">
-      <div className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-muted">
-        {icon}
-      </div>
-      <div>
-        <h3 className="font-semibold text-lg text-foreground">{title}</h3>
-        <p className="text-sm text-muted-foreground font-light">{description}</p>
-      </div>
-    </div>
-  </Card>
+import React, { useState } from 'react';
+import { Target, Rocket, Check, Plus, FileText, BrainCircuit, Zap, Bot, Send, Scaling, ChevronDown } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+
+const Step = ({ icon, title, description, isOpen, onToggle }: { icon: React.ReactNode, title: string, description: string, isOpen: boolean, onToggle: () => void }) => (
+    <CollapsibleTrigger asChild>
+        <button className="w-full text-left">
+            <Card className="w-full p-6 glassmorphic flex items-center justify-between hover:bg-muted/50 transition-colors">
+                <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-muted">
+                        {icon}
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-lg text-foreground">{title}</h3>
+                        <p className="text-sm text-muted-foreground font-light">{description}</p>
+                    </div>
+                </div>
+                <ChevronDown className={cn("w-5 h-5 text-muted-foreground transition-transform", isOpen && "rotate-180")} />
+            </Card>
+        </button>
+    </CollapsibleTrigger>
 );
 
 const SubStep = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
@@ -28,7 +37,7 @@ const SubStep = ({ icon, title, description }: { icon: React.ReactNode, title: s
         </div>
       </div>
     </Card>
-  );
+);
 
 const Connector = () => (
     <div className="relative h-12 w-full flex justify-center items-center">
@@ -39,15 +48,52 @@ const Connector = () => (
         </div>
       </div>
     </div>
-  );
+);
 
-  const SubConnector = () => (
+const SubConnector = () => (
     <div className="relative h-8 w-full flex justify-center items-center">
         <div className="h-full w-px bg-border/50 border-dashed"></div>
     </div>
-  );
+);
+
+const stepsData = [
+    {
+        icon: <Target className="w-5 h-5 text-foreground" />,
+        title: "Share your goals",
+        description: "Tell us what you want to achieve, and we'll handle the 'how'.",
+        subSteps: [
+            { icon: <FileText className="w-4 h-4 text-muted-foreground" />, title: "Initial Briefing", description: "We start with your vision, target audience, and business objectives." },
+            { icon: <BrainCircuit className="w-4 h-4 text-muted-foreground" />, title: "Strategy Session", description: "We define key metrics and map out a high-level plan together." },
+        ]
+    },
+    {
+        icon: <Rocket className="w-5 h-5 text-foreground" />,
+        title: "Outlai does the heavy lifting",
+        description: "Our team builds, optimizes, and manages your marketing tasks at high speed.",
+        subSteps: [
+            { icon: <Zap className="w-4 h-4 text-muted-foreground" />, title: "Rapid Prototyping", description: "Our AI and human team create initial designs and copy." },
+            { icon: <Bot className="w-4 h-4 text-muted-foreground" />, title: "Build & Optimize", description: "We build out assets, from landing pages to social content, with SEO best practices." },
+            { icon: <Check className="w-4 h-4 text-muted-foreground" />, title: "Review & Refine", description: "You get to review and provide feedback, which we implement in minutes." },
+        ]
+    },
+    {
+        icon: <Check className="w-5 h-5 text-foreground" />,
+        title: "You launch, focus, and grow",
+        description: "With marketing on autopilot, you can get back to building your product.",
+        subSteps: [
+            { icon: <Send className="w-4 h-4 text-muted-foreground" />, title: "Launch & Monitor", description: "We deploy the campaign and monitor its performance in real-time." },
+            { icon: <Scaling className="w-4 h-4 text-muted-foreground" />, title: "Scale & Report", description: "We provide clear reports and scale what's working to maximize your ROI." },
+        ]
+    }
+];
 
 export function HowItWorks() {
+  const [openStep, setOpenStep] = useState<number | null>(0);
+
+  const handleToggle = (index: number) => {
+    setOpenStep(openStep === index ? null : index);
+  };
+
   return (
     <section id="how-it-works" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -61,72 +107,35 @@ export function HowItWorks() {
         </div>
         
         <div className="max-w-xl mx-auto flex flex-col items-center">
-            {/* Step 1 */}
-            <Step 
-                icon={<Target className="w-5 h-5 text-foreground" />}
-                title="Share your goals"
-                description="Tell us what you want to achieve, and we'll handle the 'how'."
-            />
-            <SubConnector />
-            <SubStep
-                icon={<FileText className="w-4 h-4 text-muted-foreground" />}
-                title="Initial Briefing"
-                description="We start with your vision, target audience, and business objectives."
-            />
-            <SubConnector />
-            <SubStep
-                icon={<BrainCircuit className="w-4 h-4 text-muted-foreground" />}
-                title="Strategy Session"
-                description="We define key metrics and map out a high-level plan together."
-            />
-
-            <Connector />
-
-            {/* Step 2 */}
-            <Step 
-                icon={<Rocket className="w-5 h-5 text-foreground" />}
-                title="Outlai does the heavy lifting"
-                description="Our team builds, optimizes, and manages your marketing tasks at high speed."
-            />
-            <SubConnector />
-            <SubStep
-                icon={<Zap className="w-4 h-4 text-muted-foreground" />}
-                title="Rapid Prototyping"
-                description="Our AI and human team create initial designs and copy."
-            />
-             <SubConnector />
-            <SubStep
-                icon={<Bot className="w-4 h-4 text-muted-foreground" />}
-                title="Build & Optimize"
-                description="We build out assets, from landing pages to social content, with SEO best practices."
-            />
-             <SubConnector />
-            <SubStep
-                icon={<Check className="w-4 h-4 text-muted-foreground" />}
-                title="Review & Refine"
-                description="You get to review and provide feedback, which we implement in minutes."
-            />
-
-            <Connector />
-
-            {/* Step 3 */}
-            <Step 
-                icon={<Check className="w-5 h-5 text-foreground" />}
-                title="You launch, focus, and grow"
-                description="With marketing on autopilot, you can get back to building your product."
-            />
-             <SubConnector />
-             <SubStep
-                icon={<Send className="w-4 h-4 text-muted-foreground" />}
-                title="Launch & Monitor"
-                description="We deploy the campaign and monitor its performance in real-time."
-            />
-             <SubConnector />
-             <SubStep
-                icon={<Scaling className="w-4 h-4 text-muted-foreground" />}
-                title="Scale & Report"
-                description="We provide clear reports and scale what's working to maximize your ROI."
-            />
+            {stepsData.map((step, index) => (
+                <React.Fragment key={index}>
+                    <Collapsible open={openStep === index} onOpenChange={() => handleToggle(index)} className="w-full">
+                        <Step 
+                            icon={step.icon}
+                            title={step.title}
+                            description={step.description}
+                            isOpen={openStep === index}
+                            onToggle={() => handleToggle(index)}
+                        />
+                        <CollapsibleContent className="animate-accordion-down">
+                            <div className="flex flex-col items-center">
+                                <SubConnector />
+                                {step.subSteps.map((subStep, subIndex) => (
+                                    <React.Fragment key={subIndex}>
+                                        <SubStep 
+                                            icon={subStep.icon}
+                                            title={subStep.title}
+                                            description={subStep.description}
+                                        />
+                                        {subIndex < step.subSteps.length - 1 && <SubConnector />}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </CollapsibleContent>
+                    </Collapsible>
+                    {index < stepsData.length - 1 && <Connector />}
+                </React.Fragment>
+            ))}
         </div>
       </div>
     </section>
