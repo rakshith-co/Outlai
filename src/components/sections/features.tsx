@@ -67,6 +67,17 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
+const renderCustomizedLabel = (props: any) => {
+  const { x, y, width, value } = props;
+  const offset = 10;
+  return (
+    <text x={x + width + offset} y={y + 15} fill="hsl(var(--foreground))" textAnchor="start" dominantBaseline="middle" className="font-semibold text-sm">
+      {value}
+    </text>
+  );
+};
+
+
 export function Features() {
   return (
     <section id="services" className="w-full py-16 md:py-24 bg-background">
@@ -119,7 +130,7 @@ export function Features() {
                                     {feature.comparison.time.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
                                     ))}
-                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" fill="hsl(var(--foreground))" style={{ whiteSpace: 'nowrap' }} />
+                                    <LabelList dataKey="label" position="right" content={renderCustomizedLabel} />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
@@ -135,7 +146,7 @@ export function Features() {
                                     {feature.comparison.cost.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
                                     ))}
-                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" fill="hsl(var(--foreground))" style={{ whiteSpace: 'nowrap' }} />
+                                    <LabelList dataKey="label" position="right" content={renderCustomizedLabel} />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
