@@ -73,7 +73,7 @@
     background-image:
       linear-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px),
       linear-gradient(to right, hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px);
-    background-size: 2rem 2rem;
+    background-size: 3rem 3rem;
     font-feature-settings: 'cv03', 'cv04', 'cv11';
   }
   
