@@ -3,7 +3,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function Cta() {
   return (
-    <section id="contact" className="w-full py-16 md:py-24 bg-background">
+    <section id="contact" className="w-full py-16 md:py-24 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-repeat"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
+          }}
+        />
+      </div>
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto">
           <Card className="shadow-2xl glassmorphic relative">
