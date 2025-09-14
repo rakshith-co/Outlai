@@ -106,7 +106,7 @@ export function HowItWorks() {
             backgroundSize: "3rem 3rem",
           }}
         />
-        </div>
+      </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-semibold tracking-tight">
