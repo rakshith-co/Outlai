@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Edit, Rocket, Target, Lightbulb, Growth } from "lucide-react";
+import { Check, Edit, Rocket, Target, Lightbulb, Growth, ChevronRight } from "lucide-react";
 
 const steps = [
     {
@@ -35,28 +35,28 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="relative">
-          <div className="hidden md:block absolute top-8 left-0 w-full h-px bg-transparent">
-             <svg width="100%" height="2" className="absolute">
-                <line x1="15%" y1="1" x2="85%" y2="1" strokeWidth="2" strokeDasharray="8 8" className="stroke-border" />
-            </svg>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
-                  <div className="relative z-10 mb-6 bg-background rounded-full w-16 h-16 flex items-center justify-center font-bold text-2xl font-headline border-4 border-muted">
-                    <div className="bg-primary/10 text-primary rounded-full w-14 h-14 flex items-center justify-center">
-                        {step.icon}
+              <>
+                <div key={index} className="flex flex-col items-center text-center md:col-span-1">
+                    <div className="relative z-10 mb-6 bg-background rounded-full w-16 h-16 flex items-center justify-center font-bold text-2xl font-headline border-4 border-muted">
+                      <div className="bg-primary/10 text-primary rounded-full w-14 h-14 flex items-center justify-center">
+                          {step.icon}
+                      </div>
                     </div>
+                    <div className="p-4 rounded-lg">
+                      <h3 className="font-headline text-2xl font-bold mb-2">{step.title}</h3>
+                      <p className="text-muted-foreground font-light">{step.description}</p>
+                    </div>
+                </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:flex justify-center items-center">
+                    <ChevronRight className="w-12 h-12 text-border" />
                   </div>
-                  <div className="p-4 rounded-lg">
-                    <h3 className="font-headline text-2xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground font-light">{step.description}</p>
-                  </div>
-              </div>
+                )}
+              </>
             ))}
           </div>
-        </div>
       </div>
     </section>
   );
