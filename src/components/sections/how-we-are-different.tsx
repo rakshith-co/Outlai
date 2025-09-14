@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Hand, Workflow, Heart, X, Link as LinkIcon } from "lucide-react";
+import { Hand, Heart, Link as LinkIcon, X } from "lucide-react";
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -40,7 +40,7 @@ export function HowWeAreDifferent() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-4xl aspect-[4/3] mx-auto">
+        <div className="relative w-full max-w-4xl aspect-[400/300] mx-auto">
             {activeIndex !== null && (
                  <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
@@ -78,26 +78,32 @@ export function HowWeAreDifferent() {
                 <div className="absolute inset-0 pointer-events-none text-primary-foreground">
                     {/* Top Section */}
                     <div 
-                        className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
+                        className="absolute w-1/2 h-1/2 top-0 left-1/4 flex items-center justify-center"
                     >
-                        {React.cloneElement(differentiators[0].icon, { className: "w-8 h-8 text-background" })}
-                        <h3 className="font-semibold text-lg text-center text-background">{differentiators[0].title}</h3>
+                        <div className="flex flex-col items-center gap-2 text-background">
+                            {React.cloneElement(differentiators[0].icon, { className: "w-8 h-8" })}
+                            <h3 className="font-semibold text-lg text-center">{differentiators[0].title}</h3>
+                        </div>
                     </div>
 
                     {/* Bottom-Left Section */}
                     <div 
-                        className="absolute top-[75%] left-[25%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
+                        className="absolute w-1/2 h-1/2 top-1/2 left-0 flex items-center justify-center"
                     >
-                        {React.cloneElement(differentiators[1].icon, { className: "w-8 h-8 text-background" })}
-                        <h3 className="font-semibold text-lg text-center text-background">{differentiators[1].title}</h3>
+                        <div className="flex flex-col items-center gap-2 text-background">
+                            {React.cloneElement(differentiators[1].icon, { className: "w-8 h-8" })}
+                            <h3 className="font-semibold text-lg text-center">{differentiators[1].title}</h3>
+                        </div>
                     </div>
 
                     {/* Bottom-Right Section */}
                     <div 
-                        className="absolute top-[75%] left-[75%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2"
+                        className="absolute w-1/2 h-1/2 top-1/2 left-1/2 flex items-center justify-center"
                     >
-                        {React.cloneElement(differentiators[2].icon, { className: "w-8 h-8 text-background" })}
-                        <h3 className="font-semibold text-lg text-center text-background">{differentiators[2].title}</h3>
+                        <div className="flex flex-col items-center gap-2 text-background">
+                            {React.cloneElement(differentiators[2].icon, { className: "w-8 h-8" })}
+                            <h3 className="font-semibold text-lg text-center">{differentiators[2].title}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
