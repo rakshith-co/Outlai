@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Hand, Heart, Link as LinkIcon, X } from "lucide-react";
+import { Hand, Heart, Link as LinkIcon, X, GitBranch } from "lucide-react";
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,8 +16,8 @@ const differentiators = [
         positionClasses: "top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2"
     },
     {
-        icon: <LinkIcon />,
-        title: "Directed, Not Automated",
+        icon: <GitBranch />,
+        title: "We Direct",
         description: "We direct the AI, personalizing the workflow for your specific case. We're not just running scripts; we are conductors orchestrating a symphony of tools to create a masterpiece that reflects your business.",
         positionClasses: "top-3/4 left-[33%] -translate-x-1/2 -translate-y-1/2"
     },
