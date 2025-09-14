@@ -11,47 +11,78 @@ const differentiators = [
         icon: <Hand className="w-8 h-8" />,
         title: "Brand-First AI",
         description: "We start with your brand's soul, not a blank prompt. If you have a brand identity, we retain it. If you don't, we create one from scratch to ensure everything we produce is uniquely yours.",
-        position: 'bottom-1/4 left-1/2 -translate-x-1/2',
+        position: 'top',
     },
     {
         icon: <Workflow className="w-8 h-8" />,
         title: "Directed, Not Automated",
         description: "We direct the AI, personalizing the workflow for your specific case. We're not just running scripts; we are conductors orchestrating a symphony of tools to create a masterpiece that reflects your business.",
-        position: 'top-1/4 left-1/4 -translate-x-1/2',
+        position: 'left',
     },
     {
         icon: <Heart className="w-8 h-8" />,
         title: "Quality at Speed",
         description: "Our priority is making sure everything we ship has the soul of your business. We move fast, but we never compromise on the quality and integrity of your brand. You get the outcome, that simple.",
-        position: 'top-1/4 right-1/4 translate-x-1/2',
+        position: 'right',
     }
 ];
 
 const TriangleLayout = ({ activeIndex, onSelect }: { activeIndex: number | null, onSelect: (index: number | null) => void }) => {
+    const triangleSections = [
+        { // Top
+            points: "50,0 100,50 0,50",
+            labelX: "50%",
+            labelY: "25%",
+            title: differentiators[0].title,
+            icon: differentiators[0].icon,
+        },
+        { // Left
+            points: "0,50 50,100 50,0",
+            labelX: "25%",
+            labelY: "60%",
+            title: differentiators[1].title,
+            icon: differentiators[1].icon,
+        },
+        { // Right
+            points: "100,50 50,0 50,100",
+            labelX: "75%",
+            labelY: "60%",
+            title: differentiators[2].title,
+            icon: differentiators[2].icon,
+        }
+    ];
+
     return (
-        <div className="relative w-full max-w-2xl aspect-[4/3] mx-auto">
-            {/* Clickable Sections */}
-            {differentiators.map((d, index) => (
-                <div
-                    key={index}
-                    className={cn(
-                        "absolute p-4 text-center cursor-pointer transition-all duration-300 rounded-full hover:bg-primary/5",
-                        activeIndex !== null && activeIndex !== index ? 'opacity-0 scale-90' : 'opacity-100',
-                        d.position
-                    )}
-                    onClick={() => onSelect(index)}
-                >
-                   {activeIndex === null && (
-                        <div className="flex flex-col items-center gap-2 animate-in fade-in duration-500">
-                             <div className="text-primary">{React.cloneElement(d.icon, { className: "w-8 h-8" })}</div>
-                            <h3 className="font-semibold text-lg text-foreground">{d.title}</h3>
-                        </div>
-                    )}
-                </div>
-            ))}
-            
-            {/* Active content */}
-            {activeIndex !== null && (
+        <div className="relative w-full max-w-lg aspect-square mx-auto">
+            {activeIndex === null ? (
+                <svg viewBox="0 0 100 100" className="w-full h-full cursor-pointer">
+                    {triangleSections.map((section, index) => (
+                         <polygon
+                            key={index}
+                            points={section.points}
+                            className="fill-muted/20 stroke-border stroke-[1.5] hover:fill-primary/10 transition-colors"
+                            onClick={() => onSelect(index)}
+                        />
+                    ))}
+                    {triangleSections.map((section, index) => (
+                        <foreignObject key={index} x="0" y="0" width="100%" height="100%" className="pointer-events-none">
+                            <div 
+                                style={{
+                                    position: 'absolute',
+                                    left: section.labelX,
+                                    top: section.labelY,
+                                    transform: 'translate(-50%, -50%)',
+                                    textAlign: 'center',
+                                }}
+                                className="flex flex-col items-center gap-2 text-foreground"
+                            >
+                                <div className="text-primary">{section.icon}</div>
+                                <h3 className="font-semibold text-lg">{section.title}</h3>
+                            </div>
+                        </foreignObject>
+                    ))}
+                </svg>
+            ) : (
                  <div className="absolute inset-0 flex items-center justify-center p-8 animate-in fade-in duration-500">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
                          <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={() => onSelect(null)}>
@@ -72,7 +103,6 @@ const TriangleLayout = ({ activeIndex, onSelect }: { activeIndex: number | null,
         </div>
     );
 };
-
 
 export function HowWeAreDifferent() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
