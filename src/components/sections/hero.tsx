@@ -41,11 +41,11 @@ export function Hero() {
                 <CardContent className="p-4">
                     <div className="flex items-center space-x-4 text-sm font-light text-muted-foreground">
                         <span>AI SEO</span>
-                        <div className="text-muted-foreground/50"> • </div>
+                        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
                         <span>Creatives</span>
-                        <div className="text-muted-foreground/50"> • </div>
+                        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
                         <span>Social</span>
-                        <div className="text-muted-foreground/50"> • </div>
+                        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
                         <span>Automation</span>
                     </div>
                 </CardContent>
