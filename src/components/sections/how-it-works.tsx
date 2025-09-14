@@ -26,7 +26,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="w-full py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">
             How It Works
           </h2>
@@ -36,18 +36,24 @@ export function HowItWorks() {
         </div>
 
         <div className="relative">
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2"></div>
-            <div className="grid md:grid-cols-3 gap-8 relative">
+          <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-transparent">
+             <svg width="100%" height="2" className="absolute" style={{top: '-1px'}}>
+                <line x1="0" y1="1" x2="100%" y2="1" strokeWidth="2" strokeDasharray="8 8" className="stroke-border" />
+            </svg>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 relative">
             {steps.map((step, index) => (
-                <div key={index} className="glassmorphic rounded-2xl p-8 text-center">
-                    <div className="mb-6 mx-auto bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center font-bold text-2xl font-headline">
-                        {step.icon}
-                    </div>
-                    <h3 className="font-headline text-2xl font-bold mb-3">{step.title}</h3>
+              <div key={index} className="flex flex-col items-center text-center">
+                  <div className="relative z-10 mb-4 bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center font-bold text-2xl font-headline border-4 border-muted bg-background">
+                    {step.icon}
+                  </div>
+                  <div className="p-4 rounded-lg">
+                    <h3 className="font-headline text-2xl font-bold mb-2">{step.title}</h3>
                     <p className="text-muted-foreground font-light">{step.description}</p>
-                </div>
+                  </div>
+              </div>
             ))}
-            </div>
+          </div>
         </div>
       </div>
     </section>
