@@ -1,3 +1,5 @@
+"use client";
+
 import { Bot, BrainCircuit, Zap, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
