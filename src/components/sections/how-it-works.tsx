@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -95,8 +96,18 @@ export function HowItWorks() {
   };
 
   return (
-    <section id="how-it-works" className="w-full py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="how-it-works" className="relative w-full py-16 md:py-24 bg-background overflow-hidden">
+        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-repeat"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
+          }}
+        />
+        </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-headline text-3xl md:text-4xl font-semibold tracking-tight">
             How It Works
