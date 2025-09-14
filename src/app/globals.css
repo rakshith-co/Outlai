@@ -70,8 +70,10 @@
   }
   body {
     @apply bg-background text-foreground font-thin;
-    background-image: radial-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px);
-    background-size: 1.5rem 1.5rem;
+    background-image:
+      linear-gradient(hsl(var(--muted-foreground) / 0.07) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--muted-foreground) / 0.07) 1px, transparent 1px);
+    background-size: 2rem 2rem;
     font-feature-settings: 'cv03', 'cv04', 'cv11';
   }
   
