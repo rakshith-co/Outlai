@@ -17,7 +17,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-background text-foreground/80 font-light text-sm">
+    <footer className="border-t border-white/10 bg-background text-foreground/80 font-thin text-sm">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex justify-center md:justify-start">
@@ -34,7 +34,7 @@ export default function Footer() {
 
           <div className="flex justify-center md:justify-end space-x-4">
               {socialLinks.map((link, index) => (
-                <Button key={index} asChild variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground">
+                <Button key={index} asChild variant="ghost" size="icon" className="text-foreground/60 hover:text-foreground glassmorphic">
                   <a href={link.href} target="_blank" rel="noopener noreferrer">
                     {link.icon}
                   </a>

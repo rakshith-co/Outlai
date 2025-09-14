@@ -66,7 +66,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} />
+                  <Input placeholder="Your Name" {...field} className="glassmorphic"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -79,7 +79,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Business Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Acme Inc." {...field} />
+                  <Input placeholder="Acme Inc." {...field} className="glassmorphic"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -93,7 +93,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email Address</FormLabel>
                 <FormControl>
-                  <Input placeholder="you@example.com" {...field} />
+                  <Input placeholder="you@example.com" {...field} className="glassmorphic"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -107,11 +107,11 @@ export function ContactForm() {
                 <FormLabel>What you need</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="glassmorphic rounded-full">
                         <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="glassmorphic">
                         <SelectItem value="seo">SEO</SelectItem>
                         <SelectItem value="creatives">Creatives</SelectItem>
                         <SelectItem value="social">Social</SelectItem>
@@ -123,7 +123,7 @@ export function ContactForm() {
             )}
         />
         
-        <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold">
+        <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold glassmorphic" variant="outline">
           {isSubmitting ? <Loader2 className="animate-spin" /> : "Contact Outlai"}
         </Button>
       </form>

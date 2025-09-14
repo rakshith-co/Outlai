@@ -2,7 +2,6 @@ import { Hero } from '@/components/sections/hero';
 import { Features } from '@/components/sections/features';
 import { HowItWorks } from '@/components/sections/how-it-works';
 import { Cta } from '@/components/sections/cta';
-import { CaseStudy } from '@/components/sections/case-study';
 import { Testimonials } from '@/components/sections/testimonials';
 import { TechSpecs } from '@/components/sections/tech-specs';
 
@@ -12,6 +11,7 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
+      <Testimonials />
       <TechSpecs />
       <Cta />
     </div>

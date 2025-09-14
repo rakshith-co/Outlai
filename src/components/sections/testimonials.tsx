@@ -21,13 +21,13 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="work" className="w-full py-16 md:py-24 bg-muted">
+    <section id="work" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-thin tracking-tight">
             From Vision to Victory
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground font-light">
+          <p className="mt-4 text-lg text-muted-foreground font-thin">
             See how we've partnered with brands to turn ambitious goals into measurable success.
           </p>
         </div>
@@ -48,7 +48,7 @@ export function Testimonials() {
                             {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                         </div>
                       <div className="flex-grow">
-                        <p className="text-lg font-light text-foreground mb-4">
+                        <p className="text-lg font-thin text-foreground mb-4">
                          "{quotes[index].text}"
                         </p>
                       </div>

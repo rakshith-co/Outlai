@@ -10,13 +10,13 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 190 85% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 240 10% 3.9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 240 5.9% 10%;
-    --accent: 190 85% 50%;
+    --accent: 0 0% 82.7%;
     --accent-foreground: 240 10% 3.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -27,25 +27,25 @@
   }
 
   .dark {
-    --background: 220 13% 5%; /* #0b0c0f */
-    --foreground: 0 0% 98%;
-    --card: 220 13% 5%;
-    --card-foreground: 0 0% 98%;
-    --popover: 220 13% 5%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 190 85% 50%; /* Electric Cyan */
-    --primary-foreground: 210 40% 9.8%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 190 85% 50%; /* Electric Cyan */
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 82.7%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 190 85% 50%;
+    --ring: 0 0% 82.7%;
   }
 }
 
@@ -54,12 +54,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-light;
+    @apply bg-background text-foreground font-thin;
     font-feature-settings: 'cv03', 'cv04', 'cv11';
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline font-thin;
   }
 
   .glassmorphic {
-    @apply border border-white/20 bg-white/30 backdrop-blur-lg;
+    @apply border border-white/20 bg-white/5 backdrop-blur-lg;
   }
 
   .dark .glassmorphic {

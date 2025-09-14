@@ -1,21 +1,21 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle2, Code, FileText, Smartphone, Tablet, Zap } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const features = [
-  { title: "Rapid project delivery", icon: <Zap /> },
-  { title: "Revisions in minutes, not days", icon: <Code /> },
-  { title: "Agent-SEO specialists", icon: <Zap /> },
-  { title: "Social & YouTube SEO", icon: <Zap /> },
-  { title: "Fast video production", icon: <Zap /> },
+  { title: "Rapid project delivery" },
+  { title: "Revisions in minutes, not days" },
+  { title: "Agent-SEO specialists" },
+  { title: "Social & YouTube SEO" },
+  { title: "Fast video production" },
 ];
 
 const deliverables = [
-    { title: "React component + plain HTML/CSS fallback", icon: <FileText /> },
-    { title: "Optimized images, metadata, JSON-LD schema", icon: <FileText /> },
-    { title: "Vercel/Netlify ready, or static export", icon: <FileText /> },
-    { title: "Lighthouse mobile ≥ 85, desktop ≥ 95", icon: <Tablet /> },
-    { title: "WCAG AA Accessibility", icon: <Smartphone /> },
-    { title: "Optional CMS integration (Contentful, etc.)", icon: <FileText /> },
+    { title: "React component + plain HTML/CSS fallback" },
+    { title: "Optimized images, metadata, JSON-LD schema" },
+    { title: "Vercel/Netlify ready, or static export" },
+    { title: "Lighthouse mobile ≥ 85, desktop ≥ 95" },
+    { title: "WCAG AA Accessibility" },
+    { title: "Optional CMS integration (Contentful, etc.)" },
 ];
 
 
@@ -25,33 +25,33 @@ export function TechSpecs() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-                <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                <h2 className="text-3xl md:text-4xl font-thin tracking-tight mb-4">
                     Features & Trust
                 </h2>
-                <p className="text-muted-foreground mb-6">We're built for speed and reliability, so you can launch with confidence.</p>
+                <p className="text-muted-foreground mb-6 font-thin">We're built for speed and reliability, so you can launch with confidence.</p>
                 <ul className="space-y-3">
                     {features.map(feature => (
                         <li key={feature.title} className="flex items-center gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-primary" />
-                            <span className="font-light">{feature.title}</span>
+                            <CheckCircle2 className="w-5 h-5 text-accent" />
+                            <span className="font-thin">{feature.title}</span>
                         </li>
                     ))}
                 </ul>
             </div>
             <div>
-                <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                <h2 className="text-3xl md:text-4xl font-thin tracking-tight mb-4">
                     Deliverables & Specs
                 </h2>
-                <p className="text-muted-foreground mb-6">Everything you need for a production-ready, high-performance site.</p>
-                <Accordion type="single" collapsible className="w-full">
+                <p className="text-muted-foreground mb-6 font-thin">Everything you need for a production-ready, high-performance site.</p>
+                <Accordion type="single" collapsible className="w-full glassmorphic rounded-2xl px-4">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">Technical Deliverables</AccordionTrigger>
                         <AccordionContent>
                            <ul className="space-y-3 pt-2">
                                 {deliverables.map(item => (
                                     <li key={item.title} className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                                        <span className="font-light text-muted-foreground">{item.title}</span>
+                                        <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                                        <span className="font-thin text-muted-foreground">{item.title}</span>
                                     </li>
 
                                 ))}
