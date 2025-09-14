@@ -36,7 +36,7 @@ export function HowWeAreDifferent() {
   }
 
   return (
-    <section className="w-full py-16 md:py-24 bg-muted">
+    <section className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
@@ -70,11 +70,11 @@ export function HowWeAreDifferent() {
             <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm' : 'opacity-100')}>
                 <svg viewBox="0 0 400 300" className="w-full h-full">
                     {/* Main White Triangle */}
-                    <polygon points="200,0 400,300 0,300" className="fill-primary" />
+                    <polygon points="200,0 400,300 0,300" className="fill-white" />
 
                     {/* Dividers */}
-                    <line x1="100" y1="150" x2="300" y2="150" className="stroke-background" strokeWidth="2" />
-                    <line x1="200" y1="150" x2="200" y2="300" className="stroke-background" strokeWidth="2" />
+                    <line x1="100" y1="150" x2="300" y2="150" className="stroke-black" strokeWidth="2" />
+                    <line x1="200" y1="150" x2="200" y2="300" className="stroke-black" strokeWidth="2" />
 
                     {/* Clickable Zones */}
                     <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(0)} />
@@ -89,7 +89,7 @@ export function HowWeAreDifferent() {
                             onClick={() => handlePolygonClick(index)}
                             className={cn("absolute w-1/3 flex flex-col items-center justify-center gap-2 cursor-pointer pointer-events-auto", d.positionClasses)}
                          >
-                            <div className="flex flex-col items-center gap-2 text-background">
+                            <div className="flex flex-col items-center gap-2 text-black">
                                 {React.cloneElement(d.icon, { className: "w-6 h-6" })}
                                 <h3 className="font-semibold text-base text-center">{d.title}</h3>
                             </div>
