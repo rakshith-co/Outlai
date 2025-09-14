@@ -36,7 +36,7 @@ export function Hero() {
               See What We Do
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="font-semibold text-base w-full sm:w-auto glassmorphic border-white/20 hover:bg-white/10 hover:text-white">
+          <Button asChild size="lg" variant="outline" className="font-semibold text-base w-full sm:w-auto glassmorphic border-white/20 hover:bg-white/10 hover:text-white shadow-lg shadow-white/20">
             <Link href="#contact">
               Contact Sales
               <ArrowRight className="ml-2 h-4 w-4" />
