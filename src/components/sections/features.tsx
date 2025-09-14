@@ -11,7 +11,7 @@ import React from 'react';
 const featureList = [
   {
     icon: <BrainCircuit className="w-8 h-8" />,
-    title: "AI-Ready Websites & SEO",
+    title: "AI-Ready Landing Pages & SEO",
     description: "Not just Google SEO. Agent SEO. We optimize your site so AI agents like ChatGPT can find and recommend your business first.",
     comparison: {
       time: {
