@@ -47,7 +47,7 @@ export function HowWeAreDifferent() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-2xl aspect-[400/300] mx-auto">
+        <div className="relative w-full max-w-lg aspect-[400/300] mx-auto">
             {activeIndex !== null && (
                  <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
@@ -90,8 +90,8 @@ export function HowWeAreDifferent() {
                             className={cn("absolute w-1/3 flex flex-col items-center justify-center gap-2 cursor-pointer pointer-events-auto", d.positionClasses)}
                          >
                             <div className="flex flex-col items-center gap-2 text-background">
-                                {React.cloneElement(d.icon, { className: "w-8 h-8" })}
-                                <h3 className="font-semibold text-lg text-center">{d.title}</h3>
+                                {React.cloneElement(d.icon, { className: "w-6 h-6" })}
+                                <h3 className="font-semibold text-base text-center">{d.title}</h3>
                             </div>
                          </div>
                     ))}
