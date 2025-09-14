@@ -2,7 +2,7 @@ import { Hero } from '@/components/sections/hero';
 import { Features } from '@/components/sections/features';
 import { HowItWorks } from '@/components/sections/how-it-works';
 import { Cta } from '@/components/sections/cta';
-import { TechSpecs } from '@/components/sections/tech-specs';
+import { Differentiation } from '@/components/sections/differentiation';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
-      <TechSpecs />
+      <Differentiation />
       <Cta />
     </div>
   );
