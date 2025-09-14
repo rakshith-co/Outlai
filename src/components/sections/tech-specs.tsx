@@ -25,33 +25,33 @@ export function TechSpecs() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-                <h2 className="text-3xl md:text-4xl font-thin tracking-tight mb-4">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                     Features & Trust
                 </h2>
-                <p className="text-muted-foreground mb-6 font-thin">We're built for speed and reliability, so you can launch with confidence.</p>
+                <p className="text-muted-foreground mb-6 font-light">We're built for speed and reliability, so you can launch with confidence.</p>
                 <ul className="space-y-3">
                     {features.map(feature => (
                         <li key={feature.title} className="flex items-center gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-accent" />
-                            <span className="font-thin">{feature.title}</span>
+                            <CheckCircle2 className="w-5 h-5 text-primary" />
+                            <span className="font-light">{feature.title}</span>
                         </li>
                     ))}
                 </ul>
             </div>
             <div>
-                <h2 className="text-3xl md:text-4xl font-thin tracking-tight mb-4">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                     Deliverables & Specs
                 </h2>
-                <p className="text-muted-foreground mb-6 font-thin">Everything you need for a production-ready, high-performance site.</p>
-                <Accordion type="single" collapsible className="w-full glassmorphic rounded-2xl px-4">
+                <p className="text-muted-foreground mb-6 font-light">Everything you need for a production-ready, high-performance site.</p>
+                <Accordion type="single" collapsible className="w-full rounded-2xl px-4 bg-white border">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">Technical Deliverables</AccordionTrigger>
                         <AccordionContent>
                            <ul className="space-y-3 pt-2">
                                 {deliverables.map(item => (
                                     <li key={item.title} className="flex items-center gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                                        <span className="font-thin text-muted-foreground">{item.title}</span>
+                                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                                        <span className="font-light text-muted-foreground">{item.title}</span>
                                     </li>
 
                                 ))}

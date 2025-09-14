@@ -77,9 +77,9 @@ const featureList = [
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="glassmorphic p-2 border border-border rounded-lg shadow-lg">
+      <div className="glassmorphic p-2 border rounded-lg shadow-lg">
         <p className="font-bold">{`${label}`}</p>
-        <p className="text-accent">{`${payload[0].payload.label}`}</p>
+        <p className="text-primary">{`${payload[0].payload.label}`}</p>
       </div>
     );
   }
@@ -102,18 +102,18 @@ export function Features() {
     <section id="services" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-thin tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
             What We Do
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground font-thin">
+          <p className="mt-4 text-lg text-muted-foreground font-light">
             We deliver high-impact results with speed and precision, saving you time and money.
           </p>
         </div>
         
         <Tabs defaultValue={featureList[0].title} className="w-full">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-8 h-auto glassmorphic">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-8 h-auto">
             {featureList.map((feature, index) => (
-              <TabsTrigger key={index} value={feature.title} className="text-base py-3 data-[state=active]:shadow-md data-[state=active]:bg-muted/30 rounded-full">
+              <TabsTrigger key={index} value={feature.title} className="text-base py-3 data-[state=active]:shadow-md rounded-full">
                 {feature.title}
               </TabsTrigger>
             ))}
@@ -122,21 +122,21 @@ export function Features() {
           {featureList.map((feature, index) => (
             <TabsContent key={index} value={feature.title}>
               <div className="grid md:grid-cols-3 gap-8 items-stretch">
-                <Card className="glassmorphic p-4 md:p-8 flex flex-col md:col-span-1">
+                <Card className="p-4 md:p-8 flex flex-col md:col-span-1">
                   <div className="flex-grow">
-                    <div className="mb-4 bg-muted/20 text-accent rounded-lg w-16 h-16 flex items-center justify-center glassmorphic">
-                        {React.cloneElement(feature.icon, { className: "w-8 h-8 text-accent" })}
+                    <div className="mb-4 bg-muted/20 text-accent-foreground rounded-lg w-16 h-16 flex items-center justify-center">
+                        {React.cloneElement(feature.icon, { className: "w-8 h-8 text-primary" })}
                     </div>
-                    <h3 className="text-3xl font-thin mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground font-thin text-lg">{feature.description}</p>
+                    <h3 className="text-3xl font-semibold mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground font-light text-lg">{feature.description}</p>
                   </div>
                   <div className="mt-6">
-                    <Button asChild variant="outline" className="font-semibold glassmorphic">
+                    <Button asChild variant="outline" className="font-semibold">
                         <Link href="#contact">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                   </div>
                 </Card>
-                <Card className="glassmorphic p-4 md:p-8 md:col-span-2">
+                <Card className="p-4 md:p-8 md:col-span-2">
                   <div className="space-y-8 h-full flex flex-col justify-center">
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">{feature.comparison.time.title}</h4>
@@ -144,10 +144,10 @@ export function Features() {
                             <BarChart data={feature.comparison.time.data} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end', dy: 2 }} />
-                                <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
+                                <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.05)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.time.data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--accent))" : "hsl(var(--muted-foreground))"} />
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted))"} />
                                     ))}
                                     <LabelList dataKey="label" position="right" content={renderCustomizedLabel} style={{ whiteSpace: 'nowrap' }} />
                                 </Bar>
@@ -160,13 +160,13 @@ export function Features() {
                             <BarChart data={feature.comparison.cost.data} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end', dy: 2 }} />
-                                <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
+                                <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.05)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.cost.data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--accent))" : "hsl(var(--muted-foreground))"} />
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted))"} />
                                     ))}
                                     <LabelList dataKey="label" position="right" content={renderCustomizedLabel} style={{ whiteSpace: 'nowrap' }} />
-                                </Bar>
+                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
                     </div>

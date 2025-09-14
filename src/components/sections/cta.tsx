@@ -6,12 +6,12 @@ export function Cta() {
     <section id="contact" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto">
-          <Card className="glassmorphic">
+          <Card>
             <CardHeader className="text-center">
-              <h2 className="text-3xl md:text-4xl font-thin tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
                 Ready to make your business easier?
               </h2>
-              <CardDescription className="text-lg pt-2 text-muted-foreground font-thin">
+              <CardDescription className="text-lg pt-2 text-muted-foreground font-light">
                 No pricing tables. No long waits. Just tell us what you need — and we’ll deliver it fast.
               </CardDescription>
             </CardHeader>

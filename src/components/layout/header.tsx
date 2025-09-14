@@ -43,14 +43,14 @@ export default function Header() {
           
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Button key={link.href} variant="ghost" asChild className={cn('text-sm font-thin', pathname === link.href && 'font-medium bg-muted')}>
+              <Button key={link.href} variant="ghost" asChild className={cn('text-sm font-normal', pathname === link.href && 'font-medium bg-muted')}>
                 <Link href={link.href}>{link.label}</Link>
               </Button>
             ))}
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button asChild variant="outline" className="font-semibold glassmorphic">
+            <Button asChild className="font-semibold">
               <Link href="#contact">Contact Sales</Link>
             </Button>
           </div>
@@ -61,7 +61,7 @@ export default function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80vw] bg-background glassmorphic">
+            <SheetContent side="right" className="w-[80vw] bg-background/90 backdrop-blur-lg">
                 <div className="flex flex-col h-full">
                     <div className="flex justify-between items-center border-b pb-4">
                         <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
@@ -77,7 +77,7 @@ export default function Header() {
                             key={link.href}
                             href={link.href}
                             onClick={() => setSheetOpen(false)}
-                            className={cn('font-thin text-foreground/80 hover:text-foreground', pathname === link.href && 'font-medium text-foreground')}
+                            className={cn('font-normal text-foreground/80 hover:text-foreground', pathname === link.href && 'font-medium text-foreground')}
                         >
                             {link.label}
                         </Link>
@@ -85,13 +85,13 @@ export default function Header() {
                          <Link
                             href="#contact"
                             onClick={() => setSheetOpen(false)}
-                            className={cn('font-thin text-foreground/80 hover:text-foreground', pathname === '/contact' && 'font-medium text-foreground')}
+                            className={cn('font-normal text-foreground/80 hover:text-foreground', pathname === '/contact' && 'font-medium text-foreground')}
                         >
                             Contact Sales
                         </Link>
                     </nav>
                     <div className="mt-auto pt-8">
-                        <Button asChild className="w-full text-base font-semibold glassmorphic" variant="outline">
+                        <Button asChild className="w-full text-base font-semibold">
                             <Link href="#contact" onClick={() => setSheetOpen(false)}>Contact Sales</Link>
                         </Button>
                     </div>
