@@ -85,8 +85,8 @@ export function HowWeAreDifferent() {
                             className={cn("absolute w-1/3 flex flex-col items-center justify-center gap-2 cursor-pointer pointer-events-auto", d.positionClasses)}
                          >
                             <div className="flex flex-col items-center gap-2 text-black">
-                                {React.cloneElement(d.icon, { className: "w-5 h-5" })}
-                                <h3 className="font-semibold text-sm text-center">{d.title}</h3>
+                                {React.cloneElement(d.icon, { className: "w-4 h-4" })}
+                                <h3 className="font-semibold text-xs text-center">{d.title}</h3>
                             </div>
                          </div>
                     ))}
