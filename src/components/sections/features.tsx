@@ -18,7 +18,7 @@ const featureList = [
         { name: 'Traditional', value: 35, label: '5-7 Weeks' }
       ],
       cost: [
-        { name: 'Outlai', value: 1, label: 'A fraction of the cost' },
+        { name: 'Outlai', value: 1, label: 'Fraction of cost' },
         { name: 'Traditional', value: 10, label: 'Up to 90% more' }
       ]
     }
@@ -33,7 +33,7 @@ const featureList = [
         { name: 'Traditional', value: 17, label: '2-3 Weeks' }
       ],
       cost: [
-        { name: 'Outlai', value: 1, label: 'A fraction of the cost' },
+        { name: 'Outlai', value: 1, label: 'Fraction of cost' },
         { name: 'Traditional', value: 12, label: 'Up to 92% more' }
       ]
     }
@@ -48,7 +48,7 @@ const featureList = [
         { name: 'Traditional', value: 1, label: 'Ongoing' }
       ],
       cost: [
-        { name: 'Outlai', value: 1, label: 'A fraction of the cost' },
+        { name: 'Outlai', value: 1, label: 'Fraction of cost' },
         { name: 'Traditional', value: 6, label: 'Up to 84% more' }
       ]
     }
@@ -111,9 +111,9 @@ export function Features() {
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">Time to Delivery</h4>
                         <ResponsiveContainer width="100%" height={100}>
-                            <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 50, right: 150 }}>
+                            <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'start' }} dx={-80} />
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))' }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.time.map((entry, index) => (
@@ -127,9 +127,9 @@ export function Features() {
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">Estimated Cost</h4>
                         <ResponsiveContainer width="100%" height={100}>
-                            <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 50, right: 150 }}>
+                            <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'start' }} dx={-80} />
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))' }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.cost.map((entry, index) => (
