@@ -111,7 +111,7 @@ export function Features() {
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">Time to Delivery</h4>
                         <ResponsiveContainer width="100%" height={100}>
-                            <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 50, right: 120 }}>
+                            <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 50, right: 150 }}>
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'start' }} dx={-80} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
@@ -119,7 +119,7 @@ export function Features() {
                                     {feature.comparison.time.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
                                     ))}
-                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" fill="hsl(var(--foreground))" />
+                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" fill="hsl(var(--foreground))" style={{ whiteSpace: 'nowrap' }} />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
@@ -127,7 +127,7 @@ export function Features() {
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">Estimated Cost</h4>
                         <ResponsiveContainer width="100%" height={100}>
-                            <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 50, right: 120 }}>
+                            <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 50, right: 150 }}>
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'start' }} dx={-80} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
@@ -135,7 +135,7 @@ export function Features() {
                                     {feature.comparison.cost.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
                                     ))}
-                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" fill="hsl(var(--foreground))" />
+                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" fill="hsl(var(--foreground))" style={{ whiteSpace: 'nowrap' }} />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
