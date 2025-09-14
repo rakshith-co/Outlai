@@ -91,8 +91,8 @@ export function Features() {
 
           {featureList.map((feature, index) => (
             <TabsContent key={index} value={feature.title}>
-              <div className="grid md:grid-cols-2 gap-8 items-stretch">
-                <Card className="glassmorphic p-4 md:p-8 flex flex-col">
+              <div className="grid md:grid-cols-3 gap-8 items-stretch">
+                <Card className="glassmorphic p-4 md:p-8 flex flex-col md:col-span-1">
                   <div className="flex-grow">
                     <div className="mb-4 bg-primary/10 text-primary rounded-lg w-16 h-16 flex items-center justify-center">
                         {feature.icon}
@@ -106,7 +106,7 @@ export function Features() {
                     </Button>
                   </div>
                 </Card>
-                <Card className="glassmorphic p-4 md:p-8">
+                <Card className="glassmorphic p-4 md:p-8 md:col-span-2">
                   <div className="space-y-8 h-full flex flex-col justify-center">
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">Time to Delivery</h4>
