@@ -51,7 +51,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center">
             <Button asChild className="font-semibold">
-              <Link href="#contact">Contact Sales</Link>
+              <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">Book a Meeting</Link>
             </Button>
           </div>
 
@@ -92,7 +92,7 @@ export default function Header() {
                     </nav>
                     <div className="mt-auto pt-8">
                         <Button asChild className="w-full text-base font-semibold">
-                            <Link href="#contact" onClick={() => setSheetOpen(false)}>Contact Sales</Link>
+                            <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09" onClick={() => setSheetOpen(false)}>Book a Meeting</Link>
                         </Button>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ export function Cta() {
                 Ready to make your business easier?
               </h2>
               <CardDescription className="text-lg pt-2 text-muted-foreground">
-                No pricing tables. No long waits. Just tell us what you need — and we’ll deliver it fast.
+                Schedule a 20-minute call to see how we can help.
               </CardDescription>
             </CardHeader>
             <CardContent>

@@ -18,6 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -123,8 +124,8 @@ export function ContactForm() {
             )}
         />
         
-        <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold">
-          {isSubmitting ? <Loader2 className="animate-spin" /> : "Contact Outlai"}
+        <Button asChild className="w-full text-base font-semibold">
+          <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">Book a Meeting</Link>
         </Button>
       </form>
     </Form>
