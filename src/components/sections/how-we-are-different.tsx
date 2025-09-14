@@ -30,10 +30,6 @@ const differentiators = [
 
 export function HowWeAreDifferent() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  
-  const handlePolygonClick = (index: number) => {
-    setActiveIndex(index);
-  }
 
   return (
     <section className="w-full py-16 md:py-24 bg-background">
@@ -47,21 +43,21 @@ export function HowWeAreDifferent() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-lg aspect-[400/300] mx-auto">
+        <div 
+          className="relative w-full max-w-lg aspect-[400/300] mx-auto"
+          onMouseLeave={() => setActiveIndex(null)}
+        >
             {activeIndex !== null && (
-                 <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20">
+                 <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20 pointer-events-none">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
-                         <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={() => setActiveIndex(null)}>
-                            <X className="w-4 h-4" />
-                         </Button>
                          <CardHeader className="items-center">
                             <div className="p-3 bg-primary/10 rounded-full mb-2">
-                                {React.cloneElement(differentiators[activeIndex].icon, {className: "w-8 h-8 text-primary"})}
+                                {React.cloneElement(differentiators[activeIndex].icon, {className: "w-6 h-6 text-primary"})}
                             </div>
-                            <CardTitle className="text-2xl font-bold">{differentiators[activeIndex].title}</CardTitle>
+                            <CardTitle className="text-lg font-bold">{differentiators[activeIndex].title}</CardTitle>
                          </CardHeader>
                          <CardContent>
-                             <p className="text-muted-foreground font-light">{differentiators[activeIndex].description}</p>
+                             <p className="text-muted-foreground font-light text-sm">{differentiators[activeIndex].description}</p>
                          </CardContent>
                      </Card>
                  </div>
@@ -70,26 +66,26 @@ export function HowWeAreDifferent() {
             <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm' : 'opacity-100')}>
                 <svg viewBox="0 0 400 300" className="w-full h-full">
                     {/* Main White Triangle */}
-                    <polygon points="200,0 400,300 0,300" className="fill-white" />
+                    <polygon points="200,0 400,300 0,300" className="fill-primary" />
 
                     {/* Dividers */}
-                    <line x1="100" y1="150" x2="300" y2="150" className="stroke-black" strokeWidth="2" />
-                    <line x1="200" y1="150" x2="200" y2="300" className="stroke-black" strokeWidth="2" />
+                    <line x1="100" y1="150" x2="300" y2="150" className="stroke-primary-foreground" strokeWidth="2" />
+                    <line x1="200" y1="150" x2="200" y2="300" className="stroke-primary-foreground" strokeWidth="2" />
 
                     {/* Clickable Zones */}
-                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onClick={() => handlePolygonClick(0)} />
-                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onClick={() => handlePolygonClick(1)} />
-                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onClick={() => handlePolygonClick(2)} />
+                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onMouseEnter={() => setActiveIndex(0)} />
+                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onMouseEnter={() => setActiveIndex(1)} />
+                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onMouseEnter={() => setActiveIndex(2)} />
                 </svg>
 
                 <div className={cn("absolute inset-0 pointer-events-none text-primary-foreground", activeIndex !== null && 'pointer-events-auto')}>
                     {differentiators.map((d, index) => (
                          <div 
                             key={index}
-                            onClick={() => handlePolygonClick(index)}
+                            onMouseEnter={() => setActiveIndex(index)}
                             className={cn("absolute w-1/3 flex flex-col items-center justify-center gap-2 cursor-pointer pointer-events-auto", d.positionClasses)}
                          >
-                            <div className="flex flex-col items-center gap-2 text-black">
+                            <div className="flex flex-col items-center gap-2 text-primary-foreground">
                                 {React.cloneElement(d.icon, { className: "w-6 h-6" })}
                                 <h3 className="font-semibold text-base text-center">{d.title}</h3>
                             </div>
