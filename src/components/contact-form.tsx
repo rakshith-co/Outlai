@@ -17,18 +17,19 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   businessName: z.string().min(2, { message: "Business name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email." }),
+  phoneNumber: z.string().min(10, { message: "Please enter a valid phone number." }),
   service: z.string({required_error: "Please select a service."}),
 });
 
 export function ContactForm() {
   const { toast } = useToast();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -37,6 +38,7 @@ export function ContactForm() {
       name: "",
       businessName: "",
       email: "",
+      phoneNumber: "",
     },
   });
 
@@ -45,15 +47,15 @@ export function ContactForm() {
     console.log(values);
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     
-    setIsSubmitting(false);
-    form.reset();
-
     toast({
-      title: "Thanks!",
-      description: "We'll be in touch shortly.",
+      title: "Details saved!",
+      description: "Redirecting you to book a meeting...",
     });
+    
+    // Redirect to Calendly
+    router.push("https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09");
   }
 
   return (
@@ -87,19 +89,34 @@ export function ContactForm() {
             )}
           />
         </div>
-        <FormField
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email Address</FormLabel>
+                  <FormControl>
+                    <Input placeholder="you@example.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          <FormField
             control={form.control}
-            name="email"
+            name="phoneNumber"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel>Phone Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="you@example.com" {...field} />
+                  <Input placeholder="(123) 456-7890" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+        </div>
         <FormField
             control={form.control}
             name="service"
@@ -124,8 +141,8 @@ export function ContactForm() {
             )}
         />
         
-        <Button asChild className="w-full text-base font-semibold">
-          <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">Book a Meeting</Link>
+        <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold">
+          {isSubmitting ? <Loader2 className="animate-spin" /> : "Book a Meeting"}
         </Button>
       </form>
     </Form>
