@@ -60,7 +60,7 @@ export function HowWeAreDifferent() {
                  </div>
             )}
 
-            <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm pointer-events-none' : 'opacity-100')}>
+            <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm' : 'opacity-100')}>
                 <svg viewBox="0 0 400 300" className="w-full h-full">
                     {/* Main White Triangle */}
                     <polygon points="200,0 400,300 0,300" className="fill-primary" />
@@ -75,10 +75,11 @@ export function HowWeAreDifferent() {
                     <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(2)} />
                 </svg>
 
-                <div className="absolute inset-0 pointer-events-none text-primary-foreground">
+                <div className={cn("absolute inset-0 pointer-events-none text-primary-foreground", activeIndex !== null && 'pointer-events-auto')}>
                     {/* Top Section */}
                     <div 
-                        className="absolute w-1/2 h-1/2 top-0 left-1/4 flex items-center justify-center"
+                        onClick={() => setActiveIndex(0)}
+                        className="absolute w-1/2 h-1/2 top-0 left-1/4 flex items-center justify-center cursor-pointer"
                     >
                         <div className="flex flex-col items-center gap-2 text-background">
                             {React.cloneElement(differentiators[0].icon, { className: "w-8 h-8" })}
@@ -88,7 +89,9 @@ export function HowWeAreDifferent() {
 
                     {/* Bottom-Left Section */}
                     <div 
-                        className="absolute w-1/2 h-1/2 top-1/2 left-0 flex items-center justify-center"
+                        onClick={() => setActiveIndex(1)}
+                        className="absolute w-1/2 h-1/2 top-1/2 left-0 flex items-center justify-center cursor-pointer"
+                        style={{ left: '16.66%', width: '33.33%' }}
                     >
                         <div className="flex flex-col items-center gap-2 text-background">
                             {React.cloneElement(differentiators[1].icon, { className: "w-8 h-8" })}
@@ -98,7 +101,9 @@ export function HowWeAreDifferent() {
 
                     {/* Bottom-Right Section */}
                     <div 
-                        className="absolute w-1/2 h-1/2 top-1/2 left-1/2 flex items-center justify-center"
+                        onClick={() => setActiveIndex(2)}
+                        className="absolute w-1/2 h-1/2 top-1/2 left-1/2 flex items-center justify-center cursor-pointer"
+                        style={{ left: '50%', width: '33.33%' }}
                     >
                         <div className="flex flex-col items-center gap-2 text-background">
                             {React.cloneElement(differentiators[2].icon, { className: "w-8 h-8" })}
