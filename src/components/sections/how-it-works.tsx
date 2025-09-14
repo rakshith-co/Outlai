@@ -10,7 +10,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 const Step = ({ icon, title, description, isOpen, onToggle }: { icon: React.ReactNode, title: string, description: string, isOpen: boolean, onToggle: () => void }) => (
     <CollapsibleTrigger asChild>
         <button className="w-full text-left">
-            <Card className="w-full p-6 glassmorphic flex items-center justify-between hover:bg-muted/50 transition-colors">
+            <Card className={cn("w-full p-6 glassmorphic flex items-center justify-between hover:bg-muted/50 transition-all duration-300", isOpen && "shadow-lg shadow-white/10")}>
                 <div className="flex items-center space-x-4">
                     <div className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center bg-muted">
                         {icon}
