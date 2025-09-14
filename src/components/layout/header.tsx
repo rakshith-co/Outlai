@@ -61,7 +61,7 @@ export default function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80vw] bg-background/90 backdrop-blur-lg">
+            <SheetContent side="right" className="w-[80vw] glassmorphic">
                 <div className="flex flex-col h-full">
                     <div className="flex justify-between items-center border-b pb-4">
                         <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>

@@ -21,7 +21,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section id="work" className="w-full py-16 md:py-24 bg-background">
+    <section id="work" className="w-full py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -42,7 +42,7 @@ export function Testimonials() {
             {stories.map((story, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col rounded-2xl">
+                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col rounded-2xl glassmorphic">
                     <CardContent className="p-6 flex-grow flex flex-col">
                         <div className="flex text-yellow-400 mb-4">
                             {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}

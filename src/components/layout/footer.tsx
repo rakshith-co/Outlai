@@ -17,7 +17,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-background text-foreground/80 font-normal text-sm">
+    <footer className="border-t border-white/10 bg-background text-foreground/80 font-light text-sm">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex justify-center md:justify-start">
@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50">
           <p>&copy; {new Date().getFullYear()} Outlai, Inc. All rights reserved.</p>
           <p>Outlai — we make business simpler.</p>
         </div>

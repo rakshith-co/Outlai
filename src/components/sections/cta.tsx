@@ -3,15 +3,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function Cta() {
   return (
-    <section id="contact" className="w-full py-16 md:py-24 bg-background">
+    <section id="contact" className="w-full py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto">
-          <Card>
+          <Card className="shadow-2xl bg-background/80 backdrop-blur-lg border-white/10 relative">
             <CardHeader className="text-center">
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">
                 Ready to make your business easier?
               </h2>
-              <CardDescription className="text-lg pt-2 text-muted-foreground font-light">
+              <CardDescription className="text-lg pt-2 text-muted-foreground">
                 No pricing tables. No long waits. Just tell us what you need — and we’ll deliver it fast.
               </CardDescription>
             </CardHeader>

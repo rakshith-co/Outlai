@@ -111,7 +111,7 @@ export function Features() {
         </div>
         
         <Tabs defaultValue={featureList[0].title} className="w-full">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-8 h-auto">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 mb-8 h-auto glassmorphic">
             {featureList.map((feature, index) => (
               <TabsTrigger key={index} value={feature.title} className="text-base py-3 data-[state=active]:shadow-md rounded-full">
                 {feature.title}
@@ -122,7 +122,7 @@ export function Features() {
           {featureList.map((feature, index) => (
             <TabsContent key={index} value={feature.title}>
               <div className="grid md:grid-cols-3 gap-8 items-stretch">
-                <Card className="p-4 md:p-8 flex flex-col md:col-span-1">
+                <Card className="p-4 md:p-8 flex flex-col md:col-span-1 glassmorphic">
                   <div className="flex-grow">
                     <div className="mb-4 bg-muted/20 text-accent-foreground rounded-lg w-16 h-16 flex items-center justify-center">
                         {React.cloneElement(feature.icon, { className: "w-8 h-8 text-primary" })}
@@ -136,7 +136,7 @@ export function Features() {
                     </Button>
                   </div>
                 </Card>
-                <Card className="p-4 md:p-8 md:col-span-2">
+                <Card className="p-4 md:p-8 md:col-span-2 glassmorphic">
                   <div className="space-y-8 h-full flex flex-col justify-center">
                     <div>
                         <h4 className="text-lg font-semibold mb-4 text-center">{feature.comparison.time.title}</h4>

@@ -43,7 +43,7 @@ export function TechSpecs() {
                     Deliverables & Specs
                 </h2>
                 <p className="text-muted-foreground mb-6 font-light">Everything you need for a production-ready, high-performance site.</p>
-                <Accordion type="single" collapsible className="w-full rounded-2xl px-4 bg-white border">
+                <Accordion type="single" collapsible className="w-full rounded-2xl px-4 glassmorphic">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">Technical Deliverables</AccordionTrigger>
                         <AccordionContent>

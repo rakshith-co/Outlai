@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Rocket, Check, Plus, ArrowDown } from 'lucide-react';
+import { Target, Rocket, Check, Plus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const steps = [
@@ -24,15 +24,15 @@ const steps = [
 ];
 
 const Connector = () => (
-  <div className="relative h-12 w-full flex justify-center items-center">
-    <div className="h-full w-px bg-blue-200"></div>
-    <div className="absolute">
-      <div className="w-6 h-6 bg-white border border-blue-200 rounded-full flex justify-center items-center">
-        <Plus className="w-4 h-4 text-blue-400" />
+    <div className="relative h-12 w-full flex justify-center items-center">
+      <div className="h-full w-px bg-blue-200/30"></div>
+      <div className="absolute">
+        <div className="w-6 h-6 bg-background border border-blue-200/30 rounded-full flex justify-center items-center">
+          <Plus className="w-4 h-4 text-blue-400" />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 
 export function HowItWorks() {
   return (
@@ -50,7 +50,7 @@ export function HowItWorks() {
         <div className="max-w-md mx-auto flex flex-col items-center">
           {steps.map((step, index) => (
             <React.Fragment key={index}>
-              <Card className="w-full p-4 shadow-sm border-gray-200/80">
+              <Card className="w-full p-4 glassmorphic">
                 <div className="flex items-center space-x-4">
                   <div className={`w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center ${step.bgColor}`}>
                     {step.icon}

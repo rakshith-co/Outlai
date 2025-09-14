@@ -12,7 +12,7 @@ export function Hero() {
         <div className="absolute h-[400px] w-[400px] bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 right-1/4 bottom-1/2"></div>
       </div>
       <div className="container mx-auto px-4 text-center relative z-10">
-        <h1 className={cn("font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-tight")}>
+        <h1 className={cn("font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight")}>
           You focus on your product.
           <br />
           We handle the rest.
@@ -26,7 +26,7 @@ export function Hero() {
               See What We Do
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="font-semibold text-base w-full sm:w-auto">
+          <Button asChild size="lg" variant="outline" className="font-semibold text-base w-full sm:w-auto glassmorphic border-white/20 hover:bg-white/10 hover:text-white">
             <Link href="#contact">
               Contact Sales
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -37,7 +37,7 @@ export function Hero() {
           Built for businesses that want to stay ahead without worrying about AI trends and marketing complexity.
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
-            <Card className="glassmorphic rounded-full">
+            <Card className="glassmorphic rounded-2xl">
                 <CardContent className="p-4">
                     <div className="flex items-center space-x-4 text-sm font-light text-muted-foreground">
                         <span>AI SEO</span>
