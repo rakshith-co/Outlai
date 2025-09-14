@@ -14,7 +14,7 @@ const featureList = [
     description: "Not just Google SEO. Agent SEO. We optimize your site so AI agents like ChatGPT can find and recommend your business first.",
     comparison: {
       time: [
-        { name: 'Outlai', value: 1, label: '16 hours' },
+        { name: 'Outlai', value: 1, label: '8 to 16 hr' },
         { name: 'Traditional', value: 35, label: '5-7 Weeks' }
       ],
       cost: [
@@ -124,7 +124,7 @@ export function Features() {
                         <ResponsiveContainer width="100%" height={100}>
                             <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))' }} />
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end' }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.time.map((entry, index) => (
@@ -140,7 +140,7 @@ export function Features() {
                         <ResponsiveContainer width="100%" height={100}>
                             <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))' }} />
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end' }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.cost.map((entry, index) => (
