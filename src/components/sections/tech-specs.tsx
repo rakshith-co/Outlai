@@ -21,13 +21,14 @@ const deliverables = [
 
 export function TechSpecs() {
   return (
-    <section className="w-full py-16 md:py-24 bg-muted">
+    <section className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
                 <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight mb-4">
                     Features & Trust
                 </h2>
+                <p className="text-muted-foreground mb-6">We're built for speed and reliability, so you can launch with confidence.</p>
                 <ul className="space-y-3">
                     {features.map(feature => (
                         <li key={feature.title} className="flex items-center gap-3">
@@ -41,6 +42,7 @@ export function TechSpecs() {
                 <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight mb-4">
                     Deliverables & Specs
                 </h2>
+                <p className="text-muted-foreground mb-6">Everything you need for a production-ready, high-performance site.</p>
                 <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="item-1">
                         <AccordionTrigger className="font-semibold">Technical Deliverables</AccordionTrigger>
@@ -51,6 +53,7 @@ export function TechSpecs() {
                                         <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                                         <span className="font-light text-muted-foreground">{item.title}</span>
                                     </li>
+
                                 ))}
                             </ul>
                         </AccordionContent>

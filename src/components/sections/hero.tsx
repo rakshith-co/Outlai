@@ -13,48 +13,40 @@ export function Hero() {
       </div>
       <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className={cn("font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight")}>
-          Launch faster.
+          You focus on your product.
           <br />
-          Sell sooner.
+          We handle the rest.
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-base md:text-lg text-muted-foreground font-light">
-          We handle the complex, time-consuming marketing tasks—like AI-ready SEO and rapid content creation—so you can focus on your product. What took weeks, we deliver in hours.
+          Outlai makes business easier — from AI-ready SEO to creative content and digital operations. What usually takes weeks, we deliver in hours.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-semibold text-base w-full sm:w-auto">
-            <Link href="#contact">
-              Start Your Project
-              <ArrowRight className="ml-2 h-4 w-4" />
+            <Link href="#services">
+              See What We Do
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="font-semibold text-base w-full sm:w-auto glassmorphic border-white/20 hover:bg-white/10 hover:text-white">
-            <Link href="/contact">
-              <Package className="mr-2 h-5 w-5" />
+            <Link href="#contact">
               Contact Sales
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
-        <p className="mt-4 text-xs text-muted-foreground">
-          Rapid delivery • Quick revisions • Agent-friendly SEO
+        <p className="mt-4 text-xs text-muted-foreground max-w-lg mx-auto">
+          Built for businesses that want to stay ahead without worrying about AI trends and marketing complexity.
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
             <Card className="glassmorphic rounded-2xl">
                 <CardContent className="p-4">
                     <div className="flex items-center space-x-4 text-sm font-light text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                            <span className="text-primary font-mono">1.</span>
-                            <span>Order</span>
-                        </div>
-                        <div className="text-muted-foreground/50">→</div>
-                        <div className="flex items-center gap-2">
-                            <span className="text-primary font-mono">2.</span>
-                            <span>Review</span>
-                        </div>
-                        <div className="text-muted-foreground/50">→</div>
-                         <div className="flex items-center gap-2">
-                            <span className="text-primary font-mono">3.</span>
-                            <span>Launch</span>
-                        </div>
+                        <span>AI SEO</span>
+                        <div className="text-muted-foreground/50"> • </div>
+                        <span>Creatives</span>
+                        <div className="text-muted-foreground/50"> • </div>
+                        <span>Social</span>
+                        <div className="text-muted-foreground/50"> • </div>
+                        <span>Automation</span>
                     </div>
                 </CardContent>
             </Card>

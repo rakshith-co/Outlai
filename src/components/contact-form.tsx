@@ -20,11 +20,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
-  businessName: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  businessName: z.string().min(2, { message: "Business name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email." }),
-  url: z.string().url().optional().or(z.literal('')),
-  goal: z.string({required_error: "Please select a goal."}),
-  budget: z.string({required_error: "Please select a budget."}),
+  service: z.string({required_error: "Please select a service."}),
 });
 
 export function ContactForm() {
@@ -34,9 +33,9 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: "",
       businessName: "",
       email: "",
-      url: "",
     },
   });
 
@@ -62,6 +61,19 @@ export function ContactForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FormField
             control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Your Name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="businessName"
             render={({ field }) => (
               <FormItem>
@@ -73,7 +85,8 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-          <FormField
+        </div>
+        <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
@@ -86,71 +99,32 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-        </div>
         <FormField
-          control={form.control}
-          name="url"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Website URL (Optional)</FormLabel>
-              <FormControl>
-                <Input placeholder="https://example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormField
             control={form.control}
-            name="goal"
+            name="service"
             render={({ field }) => (
                 <FormItem>
-                <FormLabel>Primary Goal</FormLabel>
+                <FormLabel>What you need</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                     <SelectTrigger>
-                        <SelectValue placeholder="What do you want to achieve?" />
+                        <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                        <SelectItem value="landing-page">Rapid Landing Page</SelectItem>
-                        <SelectItem value="agent-seo">Agent-Ready SEO</SelectItem>
-                        <SelectItem value="creative-social">Creative & Social</SelectItem>
-                        <SelectItem value="other">Something else</SelectItem>
+                        <SelectItem value="seo">SEO</SelectItem>
+                        <SelectItem value="creatives">Creatives</SelectItem>
+                        <SelectItem value="social">Social</SelectItem>
+                        <SelectItem value="all-in">All-in</SelectItem>
                     </SelectContent>
                 </Select>
                 <FormMessage />
                 </FormItem>
             )}
-            />
-            <FormField
-            control={form.control}
-            name="budget"
-            render={({ field }) => (
-                <FormItem>
-                <FormLabel>Budget Range</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                    <SelectTrigger>
-                        <SelectValue placeholder="Select your budget" />
-                    </Trigger>
-                    </FormControl>
-                    <SelectContent>
-                        <SelectItem value="<1k">Under $1,000</SelectItem>
-                        <SelectItem value="1k-5k">$1,000 - $5,000</SelectItem>
-                        <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                        <SelectItem value=">10k">$10,000+</SelectItem>
-                    </SelectContent>
-                </Select>
-                <FormMessage />
-                </FormItem>
-            )}
-            />
-        </div>
+        />
         
         <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold">
-          {isSubmitting ? <Loader2 className="animate-spin" /> : "Start Your Project"}
+          {isSubmitting ? <Loader2 className="animate-spin" /> : "Contact Outlai"}
         </Button>
       </form>
     </Form>

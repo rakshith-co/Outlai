@@ -6,7 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
 const APP_NAME = "Outlai";
-const APP_DESCRIPTION = "Outlai handles complex AI marketing tasks that take weeks and delivers them in hours. Focus on your product while we handle agent-optimized SEO, and fast-turn creative + managed social.";
+const APP_DESCRIPTION = "Outlai makes business easier — from AI-ready SEO to creative content and digital operations. What usually takes weeks, we deliver in hours.";
 
 export const metadata: Metadata = {
   title: 'Outlai — AI-Ready Marketing for Modern Business',

@@ -1,23 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Edit, Rocket } from "lucide-react";
+import { Check, Edit, Rocket, Target, Lightbulb, Growth } from "lucide-react";
 
 const steps = [
     {
         step: 1,
-        title: "Tell us your goal",
-        description: "Use our simple form to outline your business objective, for a new launch or an existing brand.",
-        icon: <Edit className="w-8 h-8" />
+        title: "Share your goals",
+        description: "Tell us what you want to achieve, and we'll handle the 'how'.",
+        icon: <Target className="w-8 h-8" />
     },
     {
         step: 2,
-        title: "We build at high speed",
-        description: "Our team gets to work immediately, building your page or assets with rapid turnaround times.",
+        title: "Outlai does the heavy lifting",
+        description: "Our team builds, optimizes, and manages your marketing tasks at high speed.",
         icon: <Rocket className="w-8 h-8" />
     },
     {
         step: 3,
-        title: "You review, we deploy",
-        description: "Provide feedback, we'll make quick revisions, and your project goes live in minutes.",
+        title: "You launch, focus, and grow",
+        description: "With marketing on autopilot, you can get back to building your product.",
         icon: <Check className="w-8 h-8" />
     }
 ];
@@ -39,13 +39,13 @@ export function HowItWorks() {
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2"></div>
             <div className="grid md:grid-cols-3 gap-8 relative">
             {steps.map((step, index) => (
-                <Card key={index} className="glassmorphic rounded-2xl p-8 text-center">
+                <div key={index} className="glassmorphic rounded-2xl p-8 text-center">
                     <div className="mb-6 mx-auto bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center font-bold text-2xl font-headline">
                         {step.icon}
                     </div>
                     <h3 className="font-headline text-2xl font-bold mb-3">{step.title}</h3>
                     <p className="text-muted-foreground font-light">{step.description}</p>
-                </Card>
+                </div>
             ))}
             </div>
         </div>

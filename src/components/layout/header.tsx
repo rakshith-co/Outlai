@@ -12,7 +12,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
   { href: '#services', label: 'Services' },
-  { href: '#work', label: 'Work' },
+  { href: '#how-it-works', label: 'How it Works' },
 ];
 
 export default function Header() {
@@ -50,8 +50,8 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button asChild variant="ghost" className="font-semibold">
-              <Link href="/contact">Contact</Link>
+            <Button asChild variant="default" className="font-semibold">
+              <Link href="#contact">Contact Sales</Link>
             </Button>
           </div>
 
@@ -83,7 +83,7 @@ export default function Header() {
                         </Link>
                         ))}
                          <Link
-                            href="/contact"
+                            href="#contact"
                             onClick={() => setSheetOpen(false)}
                             className={cn('font-light text-foreground/80 hover:text-foreground', pathname === '/contact' && 'font-medium text-foreground')}
                         >
@@ -92,7 +92,7 @@ export default function Header() {
                     </nav>
                     <div className="mt-auto pt-8">
                         <Button asChild className="w-full text-base font-semibold">
-                            <Link href="/contact" onClick={() => setSheetOpen(false)}>Start Your Project</Link>
+                            <Link href="#contact" onClick={() => setSheetOpen(false)}>Contact Sales</Link>
                         </Button>
                     </div>
                 </div>
