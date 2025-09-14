@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Edit, Rocket, Target, Lightbulb, Growth, ChevronRight } from "lucide-react";
 
@@ -37,8 +38,8 @@ export function HowItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
             {steps.map((step, index) => (
-              <>
-                <div key={index} className="flex flex-col items-center text-center md:col-span-1">
+              <React.Fragment key={step.step}>
+                <div className="flex flex-col items-center text-center md:col-span-1">
                     <div className="relative z-10 mb-6 bg-background rounded-full w-16 h-16 flex items-center justify-center font-bold text-2xl font-headline border-4 border-muted">
                       <div className="bg-primary/10 text-primary rounded-full w-14 h-14 flex items-center justify-center">
                           {step.icon}
@@ -54,7 +55,7 @@ export function HowItWorks() {
                     <ChevronRight className="w-12 h-12 text-border" />
                   </div>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </div>
       </div>
