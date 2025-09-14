@@ -18,12 +18,12 @@ export function Hero() {
           Sell sooner.
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-base md:text-lg text-muted-foreground font-light">
-          Landing pages in 24 hours, SEO for AI agents, and on-demand creative + managed social—one studio, three outcomes.
+          We handle the complex, time-consuming marketing tasks—like AI-ready SEO and rapid content creation—so you can focus on your product. What took weeks, we deliver in hours.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-semibold text-base w-full sm:w-auto">
             <Link href="#contact">
-              Get my 24h Page
+              Start Your Project
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -35,7 +35,7 @@ export function Hero() {
           </Button>
         </div>
         <p className="mt-4 text-xs text-muted-foreground">
-          Next-morning delivery • Quick revisions • Agent-friendly SEO
+          Rapid delivery • Quick revisions • Agent-friendly SEO
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
             <Card className="glassmorphic rounded-2xl">
@@ -48,7 +48,7 @@ export function Hero() {
                         <div className="text-muted-foreground/50">→</div>
                         <div className="flex items-center gap-2">
                             <span className="text-primary font-mono">2.</span>
-                            <span>Wake up</span>
+                            <span>Review</span>
                         </div>
                         <div className="text-muted-foreground/50">→</div>
                          <div className="flex items-center gap-2">

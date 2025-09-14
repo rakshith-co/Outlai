@@ -17,6 +17,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import React from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   businessName: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -51,7 +52,7 @@ export function ContactForm() {
 
     toast({
       title: "Thanks!",
-      description: "We'll send a staging link by tomorrow morning.",
+      description: "We'll be in touch shortly.",
     });
   }
 
@@ -113,7 +114,7 @@ export function ContactForm() {
                     </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                        <SelectItem value="landing-page">24h Landing Page</SelectItem>
+                        <SelectItem value="landing-page">Rapid Landing Page</SelectItem>
                         <SelectItem value="agent-seo">Agent-Ready SEO</SelectItem>
                         <SelectItem value="creative-social">Creative & Social</SelectItem>
                         <SelectItem value="other">Something else</SelectItem>
@@ -133,7 +134,7 @@ export function ContactForm() {
                     <FormControl>
                     <SelectTrigger>
                         <SelectValue placeholder="Select your budget" />
-                    </SelectTrigger>
+                    </Trigger>
                     </FormControl>
                     <SelectContent>
                         <SelectItem value="<1k">Under $1,000</SelectItem>
@@ -149,7 +150,7 @@ export function ContactForm() {
         </div>
         
         <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold">
-          {isSubmitting ? <Loader2 className="animate-spin" /> : "Get my 24h Page"}
+          {isSubmitting ? <Loader2 className="animate-spin" /> : "Start Your Project"}
         </Button>
       </form>
     </Form>

@@ -5,13 +5,13 @@ const steps = [
     {
         step: 1,
         title: "Tell us your goal",
-        description: "Use our simple form to outline your objective. No lengthy brief required.",
+        description: "Use our simple form to outline your business objective, for a new launch or an existing brand.",
         icon: <Edit className="w-8 h-8" />
     },
     {
         step: 2,
-        title: "We build overnight",
-        description: "Our team gets to work immediately, building your page or assets. You'll get a staging link in under 24 hours.",
+        title: "We build at high speed",
+        description: "Our team gets to work immediately, building your page or assets with rapid turnaround times.",
         icon: <Rocket className="w-8 h-8" />
     },
     {
@@ -31,7 +31,7 @@ export function HowItWorks() {
             How It Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground font-light">
-            A simple, fast, and transparent process to get you results.
+            Our process is simple, fast, and transparent to get you results, letting you focus on your product.
           </p>
         </div>
 

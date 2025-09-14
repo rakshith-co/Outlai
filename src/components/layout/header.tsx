@@ -92,7 +92,7 @@ export default function Header() {
                     </nav>
                     <div className="mt-auto pt-8">
                         <Button asChild className="w-full text-base font-semibold">
-                            <Link href="/contact" onClick={() => setSheetOpen(false)}>Get my 24h Page</Link>
+                            <Link href="/contact" onClick={() => setSheetOpen(false)}>Start Your Project</Link>
                         </Button>
                     </div>
                 </div>

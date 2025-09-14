@@ -4,20 +4,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const featureList = [
   {
     icon: <Layers className="w-8 h-8 text-primary" />,
-    title: "1-Day Landing Pages",
-    description: "Complete landing pages ready next morning—no brief required. Includes templates, optional custom copy, and lightning-fast deployment.",
+    title: "Rapid Site Delivery",
+    description: "Get complete landing pages and marketing sites built with incredible speed. We translate your goals into production-ready assets in hours, not weeks.",
     tag: "On-the-go sites",
   },
   {
     icon: <Telescope className="w-8 h-8 text-primary" />,
     title: "Agent-Ready SEO",
-    description: "Optimize your site so modern agents (ChatGPT-style) find products & actions first. We focus on schema, agent signals, and product-first indexing.",
+    description: "Optimize your site so modern agents (like ChatGPT) find your products and services first. We focus on schema, agent signals, and product-first indexing.",
     tag: "AI/Agent-first discovery",
   },
   {
     icon: <Clapperboard className="w-8 h-8 text-primary" />,
     title: "Creative & Managed Social",
-    description: "Videos, carousels, reels and full channel management. Production time cut by days, cost cut by ~⅓ with fast edits and VFX-lite options.",
+    description: "Videos, carousels, reels, and full channel management. We cut production time and costs, delivering high-quality content that drives growth.",
     tag: "Speedy video & growth",
   },
 ];

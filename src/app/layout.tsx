@@ -6,10 +6,10 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
 const APP_NAME = "Outlai";
-const APP_DESCRIPTION = "Outlai delivers landing pages in 24 hours, agent-optimized SEO, and fast-turn creative + managed social. Launch faster—get a staging link by tomorrow morning.";
+const APP_DESCRIPTION = "Outlai handles complex AI marketing tasks that take weeks and delivers them in hours. Focus on your product while we handle agent-optimized SEO, and fast-turn creative + managed social.";
 
 export const metadata: Metadata = {
-  title: 'Outlai — 24h Landing Pages • Agent-Ready SEO • Fast Creatives',
+  title: 'Outlai — AI-Ready Marketing for Modern Business',
   description: APP_DESCRIPTION,
   applicationName: APP_NAME,
   appleWebApp: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: 'https://outlai.studio',
-    title: 'Outlai — 24h Landing Pages • Agent-Ready SEO • Fast Creatives',
+    title: 'Outlai — AI-Ready Marketing for Modern Business',
     description: APP_DESCRIPTION,
     images: {
       url: '/og-image.png',

@@ -12,7 +12,7 @@ export function Cta() {
                 Ready to Launch Faster?
               </h2>
               <CardDescription className="text-lg pt-2 text-muted-foreground">
-                Fill out the form and we'll send a staging link by tomorrow morning.
+                Let us handle the complexity of AI-driven marketing. You focus on your product.
               </CardDescription>
             </CardHeader>
             <CardContent>

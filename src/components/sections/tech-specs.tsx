@@ -2,8 +2,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle2, Code, FileText, Smartphone, Tablet, Zap } from "lucide-react";
 
 const features = [
-  { title: "Next-morning launch", icon: <Zap /> },
-  { title: "Revisions in minutes", icon: <Code /> },
+  { title: "Rapid project delivery", icon: <Zap /> },
+  { title: "Revisions in minutes, not days", icon: <Code /> },
   { title: "Agent-SEO specialists", icon: <Zap /> },
   { title: "Social & YouTube SEO", icon: <Zap /> },
   { title: "Fast video production", icon: <Zap /> },

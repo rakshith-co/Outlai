@@ -6,9 +6,9 @@ import { Layers, Telescope, Clapperboard } from "lucide-react";
 
 const serviceTiers = [
   {
-    name: "24h Landing Pages",
+    name: "Rapid Landing Pages",
     icon: <Layers className="w-8 h-8 text-primary" />,
-    description: "Lightning-fast landing pages built overnight to capture your audience.",
+    description: "High-speed landing pages built to capture your audience and drive conversions.",
     features: [
         "Template-based or custom design",
         "Next-morning delivery",
