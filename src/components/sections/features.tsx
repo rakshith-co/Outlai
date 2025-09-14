@@ -113,7 +113,7 @@ export function Features() {
                         <ResponsiveContainer width="100%" height={100}>
                             <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 50, right: 120 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))' }}/>
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'start' }} dx={-80} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.time.map((entry, index) => (
@@ -129,7 +129,7 @@ export function Features() {
                         <ResponsiveContainer width="100%" height={100}>
                             <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 50, right: 120 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))' }}/>
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'start' }} dx={-80} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.cost.map((entry, index) => (
