@@ -41,7 +41,7 @@ export function HowWeAreDifferent() {
         </div>
 
         <div className="relative w-full max-w-4xl aspect-[4/3] mx-auto">
-            {activeIndex !== null ? (
+            {activeIndex !== null && (
                  <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
                          <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={() => setActiveIndex(null)}>
@@ -58,7 +58,7 @@ export function HowWeAreDifferent() {
                          </CardContent>
                      </Card>
                  </div>
-            ) : null}
+            )}
 
             <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm pointer-events-none' : 'opacity-100')}>
                 <svg viewBox="0 0 400 300" className="w-full h-full">
@@ -70,9 +70,9 @@ export function HowWeAreDifferent() {
                     <line x1="200" y1="150" x2="200" y2="300" className="stroke-background" strokeWidth="2" />
 
                     {/* Clickable Zones */}
-                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer" onClick={() => setActiveIndex(0)} />
-                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer" onClick={() => setActiveIndex(1)} />
-                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer" onClick={() => setActiveIndex(2)} />
+                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(0)} />
+                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(1)} />
+                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(2)} />
                 </svg>
 
                 <div className="absolute inset-0 pointer-events-none text-primary-foreground">
