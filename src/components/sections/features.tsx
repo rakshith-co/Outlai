@@ -14,7 +14,7 @@ const featureList = [
     description: "Not just Google SEO. Agent SEO. We optimize your site so AI agents like ChatGPT can find and recommend your business first.",
     comparison: {
       time: [
-        { name: 'Outlai', value: 2, label: '1-2 Days' },
+        { name: 'Outlai', value: 1, label: '16 hours' },
         { name: 'Traditional', value: 35, label: '5-7 Weeks' }
       ],
       cost: [
@@ -68,10 +68,10 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 };
 
 const renderCustomizedLabel = (props: any) => {
-  const { x, y, width, value } = props;
+  const { x, y, width, height, value } = props;
   const offset = 10;
   return (
-    <text x={x + width + offset} y={y + 15} fill="hsl(var(--foreground))" textAnchor="start" dominantBaseline="middle" className="font-semibold text-sm">
+    <text x={x + width + offset} y={y + height / 2} fill="hsl(var(--foreground))" textAnchor="start" dominantBaseline="middle" className="font-semibold text-sm whitespace-nowrap">
       {value}
     </text>
   );
