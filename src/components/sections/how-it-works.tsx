@@ -4,31 +4,31 @@ import { Card } from '@/components/ui/card';
 
 const steps = [
   {
-    icon: <Target className="w-5 h-5 text-white" />,
+    icon: <Target className="w-5 h-5 text-foreground" />,
     title: 'Share your goals',
     description: "Tell us what you want to achieve, and we'll handle the 'how'.",
-    bgColor: 'bg-purple-500',
+    bgColor: 'bg-muted',
   },
   {
-    icon: <Rocket className="w-5 h-5 text-white" />,
+    icon: <Rocket className="w-5 h-5 text-foreground" />,
     title: 'Outlai does the heavy lifting',
     description: 'Our team builds, optimizes, and manages your marketing tasks at high speed.',
-    bgColor: 'bg-blue-500',
+    bgColor: 'bg-muted',
   },
   {
-    icon: <Check className="w-5 h-5 text-white" />,
+    icon: <Check className="w-5 h-5 text-foreground" />,
     title: 'You launch, focus, and grow',
     description: 'With marketing on autopilot, you can get back to building your product.',
-    bgColor: 'bg-green-500',
+    bgColor: 'bg-muted',
   },
 ];
 
 const Connector = () => (
     <div className="relative h-12 w-full flex justify-center items-center">
-      <div className="h-full w-px bg-blue-200/30"></div>
+      <div className="h-full w-px bg-border"></div>
       <div className="absolute">
-        <div className="w-6 h-6 bg-background border border-blue-200/30 rounded-full flex justify-center items-center">
-          <Plus className="w-4 h-4 text-blue-400" />
+        <div className="w-6 h-6 bg-background border border-border rounded-full flex justify-center items-center">
+          <Plus className="w-4 h-4 text-muted-foreground" />
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ export function HowItWorks() {
     <section id="how-it-works" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+          <h2 className="font-headline text-3xl md:text-4xl font-semibold tracking-tight">
             How It Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground font-light">
