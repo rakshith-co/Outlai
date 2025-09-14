@@ -24,79 +24,44 @@ const differentiators = [
     }
 ];
 
-const TriangleLayout = ({ activeIndex, onSelect }: { activeIndex: number | null, onSelect: (index: number | null) => void }) => {
-    const triangleSections = [
-        { // Top
-            points: "50,0 100,50 0,50",
-            position: 'top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2',
-            title: differentiators[0].title,
-            icon: differentiators[0].icon,
-        },
-        { // Left
-            points: "0,50 50,100 50,0",
-            position: 'top-1/2 left-1/4 -translate-x-1/2',
-            title: differentiators[1].title,
-            icon: differentiators[1].icon,
-        },
-        { // Right
-            points: "100,50 50,0 50,100",
-            position: 'top-1/2 left-3/4 -translate-x-1/2',
-            title: differentiators[2].title,
-            icon: differentiators[2].icon,
-        }
-    ];
-
+const TriangleIcon = ({ activeIndex, onSelect }: { activeIndex: number | null, onSelect: (index: number | null) => void }) => {
     return (
-        <div className="relative w-full max-w-lg aspect-square mx-auto">
-            {activeIndex !== null ? (
-                 <div className="absolute inset-0 flex items-center justify-center p-8 animate-in fade-in duration-500 z-20">
-                     <Card className="glassmorphic w-full max-w-md text-center relative">
-                         <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={() => onSelect(null)}>
-                            <X className="w-4 h-4" />
-                         </Button>
-                         <CardHeader className="items-center">
-                            <div className="p-3 bg-primary/10 rounded-full mb-2">
-                                {React.cloneElement(differentiators[activeIndex].icon, {className: "w-8 h-8 text-primary"})}
-                            </div>
-                            <CardTitle className="text-2xl font-bold">{differentiators[activeIndex].title}</CardTitle>
-                         </CardHeader>
-                         <CardContent>
-                             <p className="text-muted-foreground font-light">{differentiators[activeIndex].description}</p>
-                         </CardContent>
-                     </Card>
-                 </div>
-            ) : (
-                <div className="relative w-full h-full">
-                    <svg viewBox="0 0 100 100" className="w-full h-full cursor-pointer absolute inset-0">
-                        {triangleSections.map((section, index) => (
-                             <polygon
-                                key={index}
-                                points={section.points}
-                                className="fill-muted/20 stroke-border stroke-[1.5] hover:fill-primary/10 transition-colors"
-                                onClick={() => onSelect(index)}
-                            />
-                        ))}
-                    </svg>
-                    {triangleSections.map((section, index) => (
-                        <div
-                            key={index}
-                            onClick={() => onSelect(index)}
-                            style={{
-                                top: section.position.includes('top-1/4') ? '25%' : '60%',
-                                left: section.position.includes('left-1/2') ? '50%' : section.position.includes('left-1/4') ? '25%' : '75%',
-                                transform: 'translate(-50%, -50%)'
-                            }}
-                            className="absolute flex flex-col items-center gap-2 text-foreground cursor-pointer"
-                        >
-                            <div className="text-primary">{section.icon}</div>
-                            <h3 className="font-semibold text-lg text-center">{section.title}</h3>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
-};
+        <svg viewBox="0 0 100 86.6" className="w-full h-full cursor-pointer drop-shadow-lg">
+            {/* Top Section */}
+            <polygon
+                points="50,0 100,86.6 0,86.6"
+                className={cn(
+                    "fill-card stroke-border stroke-[0.5] transition-colors",
+                    activeIndex !== 0 && "hover:fill-muted"
+                )}
+                onClick={() => onSelect(0)}
+            />
+             <polygon
+                points="50,0 75,43.3 25,43.3"
+                className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors", activeIndex === 0 ? "fill-primary/10" : "")}
+                onClick={() => onSelect(0)}
+            />
+
+            {/* Bottom Left Section */}
+            <polygon
+                points="0,86.6 50,86.6 25,43.3"
+                className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors", activeIndex === 1 ? "fill-primary/10" : "")}
+                onClick={() => onSelect(1)}
+            />
+            
+            {/* Bottom Right Section */}
+             <polygon
+                points="50,86.6 100,86.6 75,43.3"
+                className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors", activeIndex === 2 ? "fill-primary/10" : "")}
+                onClick={() => onSelect(2)}
+            />
+
+            {/* Dividers */}
+            <line x1="25" y1="43.3" x2="75" y2="43.3" className="stroke-border stroke-[0.5]" />
+            <line x1="50" y1="86.6" x2="50" y2="43.3" className="stroke-border stroke-[0.5]" />
+        </svg>
+    )
+}
 
 export function HowWeAreDifferent() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -113,7 +78,67 @@ export function HowWeAreDifferent() {
           </p>
         </div>
 
-        <TriangleLayout activeIndex={activeIndex} onSelect={setActiveIndex} />
+        <div className="relative w-full max-w-lg aspect-[100/86.6] mx-auto">
+            {activeIndex !== null ? (
+                 <div className="absolute inset-0 flex items-center justify-center p-8 animate-in fade-in duration-500 z-20">
+                     <Card className="glassmorphic w-full max-w-md text-center relative">
+                         <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={() => setActiveIndex(null)}>
+                            <X className="w-4 h-4" />
+                         </Button>
+                         <CardHeader className="items-center">
+                            <div className="p-3 bg-primary/10 rounded-full mb-2">
+                                {React.cloneElement(differentiators[activeIndex].icon, {className: "w-8 h-8 text-primary"})}
+                            </div>
+                            <CardTitle className="text-2xl font-bold">{differentiators[activeIndex].title}</CardTitle>
+                         </CardHeader>
+                         <CardContent>
+                             <p className="text-muted-foreground font-light">{differentiators[activeIndex].description}</p>
+                         </CardContent>
+                     </Card>
+                 </div>
+            ) : (
+                 <div className="relative w-full h-full">
+                    <svg viewBox="0 0 100 86.6" className="w-full h-full drop-shadow-lg">
+                        {/* Top Section */}
+                        <polygon
+                            points="50,0 75,43.3 25,43.3"
+                            className="fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer"
+                            onClick={() => setActiveIndex(0)}
+                        />
+                        {/* Bottom Left Section */}
+                        <polygon
+                            points="0,86.6 50,86.6 25,43.3"
+                            className="fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer"
+                            onClick={() => setActiveIndex(1)}
+                        />
+                        {/* Bottom Right Section */}
+                        <polygon
+                            points="50,86.6 100,86.6 75,43.3"
+                            className="fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer"
+                            onClick={() => setActiveIndex(2)}
+                        />
+                    </svg>
+
+                    <div className="absolute inset-0 pointer-events-none">
+                        {/* Top Label */}
+                        <div className="absolute top-[22%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto" onClick={() => setActiveIndex(0)}>
+                             {React.cloneElement(differentiators[0].icon, { className: "w-6 h-6 text-primary" })}
+                            <h3 className="font-semibold text-sm text-center text-foreground">{differentiators[0].title}</h3>
+                        </div>
+                        {/* Left Label */}
+                        <div className="absolute top-[68%] left-[25%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto" onClick={() => setActiveIndex(1)}>
+                            {React.cloneElement(differentiators[1].icon, { className: "w-6 h-6 text-primary" })}
+                            <h3 className="font-semibold text-sm text-center text-foreground">{differentiators[1].title}</h3>
+                        </div>
+                        {/* Right Label */}
+                        <div className="absolute top-[68%] left-[75%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto" onClick={() => setActiveIndex(2)}>
+                             {React.cloneElement(differentiators[2].icon, { className: "w-6 h-6 text-primary" })}
+                            <h3 className="font-semibold text-sm text-center text-foreground">{differentiators[2].title}</h3>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
 
       </div>
     </section>
