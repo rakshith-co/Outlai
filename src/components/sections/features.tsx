@@ -29,7 +29,7 @@ const featureList = [
     description: "Videos, reels, carousels, and campaigns—cut from weeks to hours. Choose from quick creative assets or fully managed growth funnels.",
     comparison: {
       time: [
-        { name: 'Outlai', value: 2, label: '1-3 Days' },
+        { name: 'Outlai', value: 2, label: '4 to 16 hours' },
         { name: 'Traditional', value: 17, label: '2-3 Weeks' }
       ],
       cost: [
@@ -124,7 +124,7 @@ export function Features() {
                         <ResponsiveContainer width="100%" height={100}>
                             <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end' }} />
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end', dy: 2 }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.time.map((entry, index) => (
@@ -140,7 +140,7 @@ export function Features() {
                         <ResponsiveContainer width="100%" height={100}>
                             <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
-                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end' }} />
+                                <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end', dy: 2 }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.cost.map((entry, index) => (
