@@ -117,19 +117,19 @@ export function HowItWorks() {
                             isOpen={openStep === index}
                             onToggle={() => handleToggle(index)}
                         />
-                        <CollapsibleContent className="animate-accordion-down">
+                        <CollapsibleContent>
                             <div className="flex flex-col items-center">
                                 <SubConnector />
-                                {step.subSteps.map((subStep, subIndex) => (
-                                    <React.Fragment key={subIndex}>
+                                <div className="w-full space-y-2">
+                                    {step.subSteps.map((subStep, subIndex) => (
                                         <SubStep 
+                                            key={subIndex}
                                             icon={subStep.icon}
                                             title={subStep.title}
                                             description={subStep.description}
                                         />
-                                        {subIndex < step.subSteps.length - 1 && <SubConnector />}
-                                    </React.Fragment>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </CollapsibleContent>
                     </Collapsible>
