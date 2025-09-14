@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -39,7 +40,7 @@ export function HowWeAreDifferent() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-lg aspect-square mx-auto">
+        <div className="relative w-full max-w-2xl aspect-[4/3] mx-auto">
             {activeIndex !== null ? (
                  <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
@@ -57,57 +58,43 @@ export function HowWeAreDifferent() {
                          </CardContent>
                      </Card>
                  </div>
-            ) : (
-                 <div className="relative w-full h-full">
-                    <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
-                        {/* Top Triangle */}
-                        <polygon
-                            points="50,0 100,50 0,50"
-                            className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer")}
-                            onClick={() => setActiveIndex(0)}
-                        />
-                        {/* Bottom Left Triangle */}
-                        <polygon
-                            points="0,50 50,100 0,100"
-                            className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer")}
-                            onClick={() => setActiveIndex(1)}
-                        />
-                        {/* Bottom Right Triangle */}
-                        <polygon
-                            points="100,50 100,100 50,100"
-                            className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer")}
-                            onClick={() => setActiveIndex(2)}
-                        />
-                         {/* Center small triangle to fill gap */}
-                        <polygon
-                            points="50,50 0,50 50,100"
-                            className={cn("fill-card")}
-                        />
-                        <polygon
-                            points="50,50 100,50 50,100"
-                            className={cn("fill-card")}
-                        />
-                    </svg>
+            ) : null}
 
-                    <div className="absolute inset-0 pointer-events-none">
-                        {/* Top Label */}
-                        <div className="absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto" onClick={() => setActiveIndex(0)}>
-                             {React.cloneElement(differentiators[0].icon, { className: "w-6 h-6 text-primary" })}
-                            <h3 className="font-semibold text-sm text-center text-foreground">{differentiators[0].title}</h3>
-                        </div>
-                        {/* Left Label */}
-                        <div className="absolute top-[75%] left-[25%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto" onClick={() => setActiveIndex(1)}>
-                            {React.cloneElement(differentiators[1].icon, { className: "w-6 h-6 text-primary" })}
-                            <h3 className="font-semibold text-sm text-center text-foreground">{differentiators[1].title}</h3>
-                        </div>
-                        {/* Right Label */}
-                        <div className="absolute top-[75%] left-[75%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto" onClick={() => setActiveIndex(2)}>
-                             {React.cloneElement(differentiators[2].icon, { className: "w-6 h-6 text-primary" })}
-                            <h3 className="font-semibold text-sm text-center text-foreground">{differentiators[2].title}</h3>
-                        </div>
+            <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm' : 'opacity-100')}>
+                <svg viewBox="0 0 400 300" className="w-full h-full">
+                    {/* Main White Triangle */}
+                    <polygon points="200,0 400,300 0,300" className="fill-primary" />
+
+                    {/* Dividers */}
+                    <line x1="0" y1="150" x2="400" y2="150" className="stroke-background" strokeWidth="2" />
+                    <line x1="200" y1="150" x2="200" y2="300" className="stroke-background" strokeWidth="2" />
+
+                    {/* Clickable Zones */}
+                    <polygon points="200,0 400,150 0,150" className="fill-transparent cursor-pointer" onClick={() => setActiveIndex(0)} />
+                    <polygon points="0,150 200,150 200,300 0,300" className="fill-transparent cursor-pointer" onClick={() => setActiveIndex(1)} />
+                    <polygon points="200,150 400,150 400,300 200,300" className="fill-transparent cursor-pointer" onClick={() => setActiveIndex(2)} />
+                </svg>
+
+                <div className="absolute inset-0 pointer-events-none text-primary-foreground">
+                    {/* Top Section */}
+                    <div className="absolute top-[calc(25%-10px)] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+                        {React.cloneElement(differentiators[0].icon, { className: "w-8 h-8" })}
+                        <h3 className="font-semibold text-lg text-center">{differentiators[0].title}</h3>
+                    </div>
+
+                    {/* Bottom-Left Section */}
+                    <div className="absolute top-3/4 left-1/4 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+                        {React.cloneElement(differentiators[1].icon, { className: "w-8 h-8" })}
+                        <h3 className="font-semibold text-lg text-center">{differentiators[1].title}</h3>
+                    </div>
+
+                    {/* Bottom-Right Section */}
+                    <div className="absolute top-3/4 left-3/4 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+                        {React.cloneElement(differentiators[2].icon, { className: "w-8 h-8" })}
+                        <h3 className="font-semibold text-lg text-center">{differentiators[2].title}</h3>
                     </div>
                 </div>
-            )}
+            </div>
         </div>
       </div>
     </section>
