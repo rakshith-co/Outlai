@@ -18,6 +18,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
+import { db } from "@/lib/firebase";
+import { addDoc, collection } from "firebase/firestore";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -44,18 +46,33 @@ export function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    console.log(values);
+    
+    try {
+      // Add a new document with a generated id.
+      const docRef = await addDoc(collection(db, "contacts"), {
+        ...values,
+        createdAt: new Date(),
+      });
+      console.log("Document written with ID: ", docRef.id);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Details saved!",
-      description: "Redirecting you to book a meeting...",
-    });
-    
-    // Redirect to Calendly
-    router.push("https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09");
+      toast({
+        title: "Details saved!",
+        description: "Redirecting you to book a meeting...",
+      });
+      
+      // Redirect to Calendly
+      router.push("https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09");
+
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "There was an error saving your details. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
