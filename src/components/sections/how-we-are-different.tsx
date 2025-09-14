@@ -60,11 +60,6 @@ export function HowWeAreDifferent() {
             ) : (
                  <div className="relative w-full h-full">
                     <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
-                        {/* Central point: 50, 50 */}
-                        {/* Top point: 50, 0 */}
-                        {/* Bottom-left point: 0, 100 */}
-                        {/* Bottom-right point: 100, 100 */}
-
                         {/* Top Triangle */}
                         <polygon
                             points="50,0 100,50 0,50"
@@ -83,7 +78,7 @@ export function HowWeAreDifferent() {
                             className={cn("fill-card stroke-border stroke-[0.5] hover:fill-primary/10 transition-colors cursor-pointer")}
                             onClick={() => setActiveIndex(2)}
                         />
-                         {/* Center small triangle */}
+                         {/* Center small triangle to fill gap */}
                         <polygon
                             points="50,50 0,50 50,100"
                             className={cn("fill-card")}
