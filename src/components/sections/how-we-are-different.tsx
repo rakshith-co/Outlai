@@ -11,19 +11,16 @@ const differentiators = [
         icon: <Hand className="w-8 h-8" />,
         title: "Brand-First AI",
         description: "We start with your brand's soul, not a blank prompt. If you have a brand identity, we retain it. If you don't, we create one from scratch to ensure everything we produce is uniquely yours.",
-        position: 'top',
     },
     {
         icon: <Workflow className="w-8 h-8" />,
         title: "Directed, Not Automated",
         description: "We direct the AI, personalizing the workflow for your specific case. We're not just running scripts; we are conductors orchestrating a symphony of tools to create a masterpiece that reflects your business.",
-        position: 'left',
     },
     {
         icon: <Heart className="w-8 h-8" />,
         title: "Quality at Speed",
         description: "Our priority is making sure everything we ship has the soul of your business. We move fast, but we never compromise on the quality and integrity of your brand. You get the outcome, that simple.",
-        position: 'right',
     }
 ];
 
@@ -31,22 +28,19 @@ const TriangleLayout = ({ activeIndex, onSelect }: { activeIndex: number | null,
     const triangleSections = [
         { // Top
             points: "50,0 100,50 0,50",
-            labelX: "50%",
-            labelY: "25%",
+            position: 'top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2',
             title: differentiators[0].title,
             icon: differentiators[0].icon,
         },
         { // Left
             points: "0,50 50,100 50,0",
-            labelX: "25%",
-            labelY: "60%",
+            position: 'top-1/2 left-1/4 -translate-x-1/2',
             title: differentiators[1].title,
             icon: differentiators[1].icon,
         },
         { // Right
             points: "100,50 50,0 50,100",
-            labelX: "75%",
-            labelY: "60%",
+            position: 'top-1/2 left-3/4 -translate-x-1/2',
             title: differentiators[2].title,
             icon: differentiators[2].icon,
         }
@@ -54,36 +48,8 @@ const TriangleLayout = ({ activeIndex, onSelect }: { activeIndex: number | null,
 
     return (
         <div className="relative w-full max-w-lg aspect-square mx-auto">
-            {activeIndex === null ? (
-                <svg viewBox="0 0 100 100" className="w-full h-full cursor-pointer">
-                    {triangleSections.map((section, index) => (
-                         <polygon
-                            key={index}
-                            points={section.points}
-                            className="fill-muted/20 stroke-border stroke-[1.5] hover:fill-primary/10 transition-colors"
-                            onClick={() => onSelect(index)}
-                        />
-                    ))}
-                    {triangleSections.map((section, index) => (
-                        <foreignObject key={index} x="0" y="0" width="100%" height="100%" className="pointer-events-none">
-                            <div 
-                                style={{
-                                    position: 'absolute',
-                                    left: section.labelX,
-                                    top: section.labelY,
-                                    transform: 'translate(-50%, -50%)',
-                                    textAlign: 'center',
-                                }}
-                                className="flex flex-col items-center gap-2 text-foreground"
-                            >
-                                <div className="text-primary">{section.icon}</div>
-                                <h3 className="font-semibold text-lg">{section.title}</h3>
-                            </div>
-                        </foreignObject>
-                    ))}
-                </svg>
-            ) : (
-                 <div className="absolute inset-0 flex items-center justify-center p-8 animate-in fade-in duration-500">
+            {activeIndex !== null ? (
+                 <div className="absolute inset-0 flex items-center justify-center p-8 animate-in fade-in duration-500 z-20">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
                          <Button variant="ghost" size="icon" className="absolute top-2 right-2" onClick={() => onSelect(null)}>
                             <X className="w-4 h-4" />
@@ -99,6 +65,34 @@ const TriangleLayout = ({ activeIndex, onSelect }: { activeIndex: number | null,
                          </CardContent>
                      </Card>
                  </div>
+            ) : (
+                <div className="relative w-full h-full">
+                    <svg viewBox="0 0 100 100" className="w-full h-full cursor-pointer absolute inset-0">
+                        {triangleSections.map((section, index) => (
+                             <polygon
+                                key={index}
+                                points={section.points}
+                                className="fill-muted/20 stroke-border stroke-[1.5] hover:fill-primary/10 transition-colors"
+                                onClick={() => onSelect(index)}
+                            />
+                        ))}
+                    </svg>
+                    {triangleSections.map((section, index) => (
+                        <div
+                            key={index}
+                            onClick={() => onSelect(index)}
+                            style={{
+                                top: section.position.includes('top-1/4') ? '25%' : '60%',
+                                left: section.position.includes('left-1/2') ? '50%' : section.position.includes('left-1/4') ? '25%' : '75%',
+                                transform: 'translate(-50%, -50%)'
+                            }}
+                            className="absolute flex flex-col items-center gap-2 text-foreground cursor-pointer"
+                        >
+                            <div className="text-primary">{section.icon}</div>
+                            <h3 className="font-semibold text-lg text-center">{section.title}</h3>
+                        </div>
+                    ))}
+                </div>
             )}
         </div>
     );
