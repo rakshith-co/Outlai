@@ -77,9 +77,9 @@ export function HowWeAreDifferent() {
                     <line x1="200" y1="150" x2="200" y2="300" className="stroke-black" strokeWidth="2" />
 
                     {/* Clickable Zones */}
-                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(0)} />
-                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(1)} />
-                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(2)} />
+                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onClick={() => handlePolygonClick(0)} />
+                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onClick={() => handlePolygonClick(1)} />
+                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5 transition-colors" onClick={() => handlePolygonClick(2)} />
                 </svg>
 
                 <div className={cn("absolute inset-0 pointer-events-none text-primary-foreground", activeIndex !== null && 'pointer-events-auto')}>
