@@ -13,14 +13,20 @@ const featureList = [
     title: "AI-Ready Websites & SEO",
     description: "Not just Google SEO. Agent SEO. We optimize your site so AI agents like ChatGPT can find and recommend your business first.",
     comparison: {
-      time: [
-        { name: 'Outlai', value: 1, label: '8 to 16 hr' },
-        { name: 'Traditional', value: 35, label: '5-7 Weeks' }
-      ],
-      cost: [
-        { name: 'Outlai', value: 1, label: 'Fraction of cost' },
-        { name: 'Traditional', value: 10, label: 'Up to 90% more' }
-      ]
+      time: {
+        title: "Time to Delivery",
+        data: [
+            { name: 'Outlai', value: 1, label: '8 to 16 hr' },
+            { name: 'Traditional', value: 35, label: '5-7 Weeks' }
+        ]
+      },
+      cost: {
+        title: "Estimated Cost",
+        data: [
+            { name: 'Outlai', value: 1, label: 'Fraction of cost' },
+            { name: 'Traditional', value: 10, label: 'Up to 90% more' }
+        ]
+      }
     }
   },
   {
@@ -28,14 +34,20 @@ const featureList = [
     title: "Creative Content, Made Fast",
     description: "Videos, reels, carousels, and campaigns—cut from weeks to hours. Choose from quick creative assets or fully managed growth funnels.",
     comparison: {
-      time: [
-        { name: 'Outlai', value: 2, label: '4 to 16 hours' },
-        { name: 'Traditional', value: 17, label: '2-3 Weeks' }
-      ],
-      cost: [
-        { name: 'Outlai', value: 1, label: 'Fraction of cost' },
-        { name: 'Traditional', value: 12, label: 'Up to 92% more' }
-      ]
+      time: {
+        title: "Time to Delivery",
+        data: [
+            { name: 'Outlai', value: 2, label: '4 to 16 hours' },
+            { name: 'Traditional', value: 17, label: '2-3 Weeks' }
+        ]
+      },
+      cost: {
+        title: "Estimated Cost",
+        data: [
+            { name: 'Outlai', value: 1, label: 'Fraction of cost' },
+            { name: 'Traditional', value: 12, label: 'Up to 92% more' }
+        ]
+      }
     }
   },
   {
@@ -43,14 +55,20 @@ const featureList = [
     title: "Social & Marketing Ops",
     description: "End-to-end management of your digital presence. From YouTube SEO to Instagram funnels, we run the campaigns while you scale.",
     comparison: {
-      time: [
-        { name: 'Outlai', value: 1, label: 'Ongoing' },
-        { name: 'Traditional', value: 1, label: 'Ongoing' }
-      ],
-      cost: [
-        { name: 'Outlai', value: 1, label: 'Fraction of cost' },
-        { name: 'Traditional', value: 6, label: 'Up to 84% more' }
-      ]
+      time: {
+        title: "Time to Impact",
+        data: [
+            { name: 'Outlai', value: 2, label: '1-2 Weeks' },
+            { name: 'Traditional', value: 6, label: '1-2 Months' }
+        ]
+      },
+      cost: {
+        title: "Estimated Cost",
+        data: [
+            { name: 'Outlai', value: 1, label: 'Fraction of cost' },
+            { name: 'Traditional', value: 6, label: 'Up to 84% more' }
+        ]
+      }
     }
   },
 ];
@@ -120,33 +138,33 @@ export function Features() {
                 <Card className="glassmorphic p-4 md:p-8 md:col-span-2">
                   <div className="space-y-8 h-full flex flex-col justify-center">
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-center">Time to Delivery</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-center">{feature.comparison.time.title}</h4>
                         <ResponsiveContainer width="100%" height={100}>
-                            <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 80, right: 150 }}>
+                            <BarChart data={feature.comparison.time.data} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end', dy: 2 }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
-                                    {feature.comparison.time.map((entry, index) => (
+                                    {feature.comparison.time.data.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
                                     ))}
-                                    <LabelList dataKey="label" position="right" content={renderCustomizedLabel} />
+                                    <LabelList dataKey="label" position="right" content={renderCustomizedLabel} style={{ whiteSpace: 'nowrap' }} />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-center">Estimated Cost</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-center">{feature.comparison.cost.title}</h4>
                         <ResponsiveContainer width="100%" height={100}>
-                            <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 80, right: 150 }}>
+                            <BarChart data={feature.comparison.cost.data} layout="vertical" margin={{ left: 80, right: 150 }}>
                                 <XAxis type="number" hide />
                                 <YAxis type="category" dataKey="name" axisLine={false} tickLine={false} width={80} tick={{ fill: 'hsl(var(--muted-foreground))', textAnchor: 'end', dy: 2 }} />
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
-                                    {feature.comparison.cost.map((entry, index) => (
+                                    {feature.comparison.cost.data.map((entry, index) => (
                                         <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
                                     ))}
-                                    <LabelList dataKey="label" position="right" content={renderCustomizedLabel} />
+                                    <LabelList dataKey="label" position="right" content={renderCustomizedLabel} style={{ whiteSpace: 'nowrap' }} />
                                 </Bar>
                             </BarChart>
                         </ResponsiveContainer>
