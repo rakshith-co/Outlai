@@ -18,8 +18,8 @@ const featureList = [
         { name: 'Traditional', value: 35, label: '5-7 Weeks' }
       ],
       cost: [
-        { name: 'Outlai', value: 999, label: '$999' },
-        { name: 'Traditional', value: 10000, label: '$10k+' }
+        { name: 'Outlai', value: 1, label: 'A fraction of the cost' },
+        { name: 'Traditional', value: 10, label: 'Up to 90% more' }
       ]
     }
   },
@@ -33,8 +33,8 @@ const featureList = [
         { name: 'Traditional', value: 17, label: '2-3 Weeks' }
       ],
       cost: [
-        { name: 'Outlai', value: 499, label: '$499+' },
-        { name: 'Traditional', value: 6000, label: '$6k+' }
+        { name: 'Outlai', value: 1, label: 'A fraction of the cost' },
+        { name: 'Traditional', value: 12, label: 'Up to 92% more' }
       ]
     }
   },
@@ -48,8 +48,8 @@ const featureList = [
         { name: 'Traditional', value: 1, label: 'Ongoing' }
       ],
       cost: [
-        { name: 'Outlai', value: 2000, label: '$2k+/mo' },
-        { name: 'Traditional', value: 12500, label: '$12.5k+/mo' }
+        { name: 'Outlai', value: 1, label: 'A fraction of the cost' },
+        { name: 'Traditional', value: 6, label: 'Up to 84% more' }
       ]
     }
   },
@@ -60,7 +60,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     return (
       <div className="bg-background/80 backdrop-blur-sm p-2 border border-border rounded-lg shadow-lg">
         <p className="font-bold">{`${label}`}</p>
-        <p className="text-primary">{`Value: ${payload[0].payload.label}`}</p>
+        <p className="text-primary">{`${payload[0].payload.label}`}</p>
       </div>
     );
   }
