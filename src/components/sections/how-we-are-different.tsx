@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import React, { useState } from 'react';
@@ -65,25 +66,10 @@ export function HowWeAreDifferent() {
 
             <div className={cn("relative w-full h-full transition-opacity duration-300", activeIndex !== null ? 'opacity-20 blur-sm' : 'opacity-100')}>
                 <svg viewBox="0 0 400 300" className="w-full h-full">
-                    <defs>
-                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.2)', stopOpacity:1}} />
-                          <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.05)', stopOpacity:1}} />
-                        </linearGradient>
-                         <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.2)', stopOpacity:1}} />
-                          <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.05)', stopOpacity:1}} />
-                        </linearGradient>
-                         <linearGradient id="grad3" x1="50%" y1="0%" x2="50%" y2="100%">
-                           <stop offset="0%" style={{stopColor: 'rgba(255,255,255,0.2)', stopOpacity:1}} />
-                          <stop offset="100%" style={{stopColor: 'rgba(255,255,255,0.05)', stopOpacity:1}} />
-                        </linearGradient>
-                    </defs>
-
                     {/* Clickable Zones */}
-                    <polygon points="200,0 100,150 300,150" fill="url(#grad3)" className="cursor-pointer" onMouseEnter={() => setActiveIndex(0)} />
-                    <polygon points="0,300 100,150 200,150 200,300" fill="url(#grad1)" className="cursor-pointer" onMouseEnter={() => setActiveIndex(1)} />
-                    <polygon points="400,300 300,150 200,150 200,300" fill="url(#grad2)" className="cursor-pointer" onMouseEnter={() => setActiveIndex(2)} />
+                    <polygon points="200,0 100,150 300,150" className="fill-white cursor-pointer hover:fill-neutral-200 transition-colors" onMouseEnter={() => setActiveIndex(0)} />
+                    <polygon points="0,300 100,150 200,150 200,300" className="fill-white cursor-pointer hover:fill-neutral-200 transition-colors" onMouseEnter={() => setActiveIndex(1)} />
+                    <polygon points="400,300 300,150 200,150 200,300" className="fill-white cursor-pointer hover:fill-neutral-200 transition-colors" onMouseEnter={() => setActiveIndex(2)} />
 
                     {/* Dividers */}
                     <line x1="100" y1="150" x2="300" y2="150" className="stroke-black" strokeWidth="2" />
@@ -91,14 +77,14 @@ export function HowWeAreDifferent() {
 
                 </svg>
 
-                <div className={cn("absolute inset-0 pointer-events-none text-white", activeIndex !== null && 'pointer-events-auto')}>
+                <div className={cn("absolute inset-0 pointer-events-none text-black", activeIndex !== null && 'pointer-events-auto')}>
                     {differentiators.map((d, index) => (
                          <div 
                             key={index}
                             onMouseEnter={() => setActiveIndex(index)}
                             className={cn("absolute w-1/3 flex flex-col items-center justify-center gap-2 cursor-pointer pointer-events-auto", d.positionClasses)}
                          >
-                            <div className="flex flex-col items-center gap-2 text-white">
+                            <div className="flex flex-col items-center gap-2 text-black">
                                 {React.cloneElement(d.icon, { className: "w-6 h-6" })}
                                 <h3 className="font-semibold text-base text-center">{d.title}</h3>
                             </div>
