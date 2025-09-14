@@ -91,54 +91,58 @@ export function Features() {
 
           {featureList.map((feature, index) => (
             <TabsContent key={index} value={feature.title}>
-              <Card className="glassmorphic p-4 md:p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="grid md:grid-cols-2 gap-8 items-stretch">
+                <Card className="glassmorphic p-4 md:p-8 flex flex-col">
+                  <div className="flex-grow">
+                    <div className="mb-4 bg-primary/10 text-primary rounded-lg w-16 h-16 flex items-center justify-center">
+                        {feature.icon}
+                    </div>
+                    <h3 className="font-headline text-3xl font-bold mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground font-light text-lg">{feature.description}</p>
+                  </div>
+                  <div className="mt-6">
+                    <Button asChild variant="outline" className="font-semibold glassmorphic">
+                        <Link href="#contact">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
+                  </div>
+                </Card>
+                <Card className="glassmorphic p-4 md:p-8">
+                  <div className="space-y-8 h-full flex flex-col justify-center">
                     <div>
-                        <div className="mb-4 bg-primary/10 text-primary rounded-lg w-16 h-16 flex items-center justify-center">
-                            {feature.icon}
-                        </div>
-                        <h3 className="font-headline text-3xl font-bold mb-3">{feature.title}</h3>
-                        <p className="text-muted-foreground font-light text-lg">{feature.description}</p>
-                        <Button asChild variant="outline" className="mt-6 font-semibold glassmorphic">
-                            <Link href="#contact">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                        </Button>
+                        <h4 className="text-lg font-semibold mb-4 text-center">Time to Delivery</h4>
+                        <ResponsiveContainer width="100%" height={100}>
+                            <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 10, right: 50 }}>
+                                <XAxis type="number" hide />
+                                <YAxis type="category" dataKey="name" hide />
+                                <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
+                                <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
+                                    {feature.comparison.time.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
+                                    ))}
+                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" />
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
                     </div>
-                    <div className="space-y-8">
-                        <div>
-                            <h4 className="text-lg font-semibold mb-2 text-center">Time to Delivery</h4>
-                            <ResponsiveContainer width="100%" height={100}>
-                                <BarChart data={feature.comparison.time} layout="vertical" margin={{ left: 10, right: 50 }}>
-                                    <XAxis type="number" hide />
-                                    <YAxis type="category" dataKey="name" hide />
-                                    <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
-                                    <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
-                                        {feature.comparison.time.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
-                                        ))}
-                                        <LabelList dataKey="label" position="right" offset={10} className="font-semibold" />
-                                    </Bar>
-                                </BarChart>
-                            </ResponsiveContainer>
-                        </div>
-                        <div>
-                            <h4 className="text-lg font-semibold mb-2 text-center">Estimated Cost</h4>
-                            <ResponsiveContainer width="100%" height={100}>
-                                <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 10, right: 50 }}>
-                                    <XAxis type="number" hide />
-                                    <YAxis type="category" dataKey="name" hide />
-                                    <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
-                                    <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
-                                        {feature.comparison.cost.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
-                                        ))}
-                                        <LabelList dataKey="label" position="right" offset={10} className="font-semibold" />
-                                    </Bar>
-                                </BarChart>
-                            </ResponsiveContainer>
-                        </div>
+                    <div>
+                        <h4 className="text-lg font-semibold mb-4 text-center">Estimated Cost</h4>
+                        <ResponsiveContainer width="100%" height={100}>
+                            <BarChart data={feature.comparison.cost} layout="vertical" margin={{ left: 10, right: 50 }}>
+                                <XAxis type="number" hide />
+                                <YAxis type="category" dataKey="name" hide />
+                                <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.1)'}}/>
+                                <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
+                                    {feature.comparison.cost.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
+                                    ))}
+                                    <LabelList dataKey="label" position="right" offset={10} className="font-semibold" />
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
                     </div>
-                </div>
-              </Card>
+                  </div>
+                </Card>
+              </div>
             </TabsContent>
           ))}
         </Tabs>
