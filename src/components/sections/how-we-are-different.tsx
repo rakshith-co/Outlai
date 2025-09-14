@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Hand, Bot, Workflow, Heart } from "lucide-react";
+import { Hand, Workflow, Heart } from "lucide-react";
 
 const differentiators = [
     {
