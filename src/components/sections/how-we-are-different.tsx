@@ -12,22 +12,29 @@ const differentiators = [
         icon: <Hand />,
         title: "Brand-First AI",
         description: "We start with your brand's soul, not a blank prompt. If you have a brand identity, we retain it. If you don't, we create one from scratch to ensure everything we produce is uniquely yours.",
+        positionClasses: "top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2"
     },
     {
         icon: <LinkIcon />,
         title: "Directed, Not Automated",
         description: "We direct the AI, personalizing the workflow for your specific case. We're not just running scripts; we are conductors orchestrating a symphony of tools to create a masterpiece that reflects your business.",
+        positionClasses: "top-3/4 left-[33%] -translate-x-1/2 -translate-y-1/2"
     },
     {
         icon: <Heart />,
         title: "Quality at Speed",
         description: "Our priority is making sure everything we ship has the soul of your business. We move fast, but we never compromise on the quality and integrity of your brand. You get the outcome, that simple.",
+        positionClasses: "top-3/4 left-[67%] -translate-x-1/2 -translate-y-1/2"
     }
 ];
 
 export function HowWeAreDifferent() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   
+  const handlePolygonClick = (index: number) => {
+    setActiveIndex(index);
+  }
+
   return (
     <section className="w-full py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
@@ -40,7 +47,7 @@ export function HowWeAreDifferent() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-4xl aspect-[400/300] mx-auto">
+        <div className="relative w-full max-w-2xl aspect-[400/300] mx-auto">
             {activeIndex !== null && (
                  <div className="absolute inset-0 flex items-center justify-center p-4 animate-in fade-in duration-500 z-20">
                      <Card className="glassmorphic w-full max-w-md text-center relative">
@@ -70,46 +77,24 @@ export function HowWeAreDifferent() {
                     <line x1="200" y1="150" x2="200" y2="300" className="stroke-background" strokeWidth="2" />
 
                     {/* Clickable Zones */}
-                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(0)} />
-                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(1)} />
-                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => setActiveIndex(2)} />
+                    <polygon points="200,0 100,150 300,150" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(0)} />
+                    <polygon points="0,300 100,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(1)} />
+                    <polygon points="400,300 300,150 200,150 200,300" className="fill-transparent cursor-pointer hover:fill-black/5" onClick={() => handlePolygonClick(2)} />
                 </svg>
 
                 <div className={cn("absolute inset-0 pointer-events-none text-primary-foreground", activeIndex !== null && 'pointer-events-auto')}>
-                    {/* Top Section */}
-                    <div 
-                        onClick={() => setActiveIndex(0)}
-                        className="absolute w-1/2 h-1/2 top-0 left-1/4 flex items-center justify-center cursor-pointer"
-                    >
-                        <div className="flex flex-col items-center gap-2 text-background">
-                            {React.cloneElement(differentiators[0].icon, { className: "w-8 h-8" })}
-                            <h3 className="font-semibold text-lg text-center">{differentiators[0].title}</h3>
-                        </div>
-                    </div>
-
-                    {/* Bottom-Left Section */}
-                    <div 
-                        onClick={() => setActiveIndex(1)}
-                        className="absolute w-1/2 h-1/2 top-1/2 left-0 flex items-center justify-center cursor-pointer"
-                        style={{ left: '16.66%', width: '33.33%' }}
-                    >
-                        <div className="flex flex-col items-center gap-2 text-background">
-                            {React.cloneElement(differentiators[1].icon, { className: "w-8 h-8" })}
-                            <h3 className="font-semibold text-lg text-center">{differentiators[1].title}</h3>
-                        </div>
-                    </div>
-
-                    {/* Bottom-Right Section */}
-                    <div 
-                        onClick={() => setActiveIndex(2)}
-                        className="absolute w-1/2 h-1/2 top-1/2 left-1/2 flex items-center justify-center cursor-pointer"
-                        style={{ left: '50%', width: '33.33%' }}
-                    >
-                        <div className="flex flex-col items-center gap-2 text-background">
-                            {React.cloneElement(differentiators[2].icon, { className: "w-8 h-8" })}
-                            <h3 className="font-semibold text-lg text-center">{differentiators[2].title}</h3>
-                        </div>
-                    </div>
+                    {differentiators.map((d, index) => (
+                         <div 
+                            key={index}
+                            onClick={() => handlePolygonClick(index)}
+                            className={cn("absolute w-1/3 flex flex-col items-center justify-center gap-2 cursor-pointer pointer-events-auto", d.positionClasses)}
+                         >
+                            <div className="flex flex-col items-center gap-2 text-background">
+                                {React.cloneElement(d.icon, { className: "w-8 h-8" })}
+                                <h3 className="font-semibold text-lg text-center">{d.title}</h3>
+                            </div>
+                         </div>
+                    ))}
                 </div>
             </div>
         </div>
