@@ -6,9 +6,9 @@ import { Linkedin, Twitter, Instagram } from 'lucide-react';
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '/marketing-strategy', label: 'AI Strategy' },
-  { href: '/content-creation', label: 'AI Content' },
-  { href: '/dashboard', label: 'Dashboard' },
+  { href: '#services', label: 'Services' },
+  { href: '#work', label: 'Work' },
+  { href: '#pricing', label: 'Pricing' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -20,17 +20,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-background text-foreground/80 font-light text-sm">
+    <footer className="border-t border-white/10 bg-background text-foreground/80 font-light text-sm">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1 space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Icons.logo className="h-7 w-7" />
               <span className={cn('font-headline text-2xl font-medium')}>
-                Outlai
+                x Studio
               </span>
             </Link>
-            <p className="pr-4">AI-Powered Marketing and Growth Solutions for Ambitious Brands.</p>
+            <p className="pr-4">Launch faster. Sell sooner.</p>
           </div>
 
           <div className="md:col-span-2">
@@ -56,8 +56,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50">
-          <p>&copy; {new Date().getFullYear()} Outlai, Inc. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50">
+          <p>&copy; {new Date().getFullYear()} x Studio, Inc. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <Link href="#" className="hover:text-foreground">Privacy Policy</Link>
             <Link href="#" className="hover:text-foreground">Terms of Service</Link>

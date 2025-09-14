@@ -6,13 +6,13 @@ export function Cta() {
     <section id="contact" className="w-full py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <Card className="shadow-2xl">
+          <Card className="shadow-2xl bg-background border-white/10">
             <CardHeader className="text-center">
               <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">
-                Ready to Scale Your Growth?
+                Ready to Launch Faster?
               </h2>
-              <CardDescription className="text-lg pt-2">
-                Tell us about your goals, and we'll be in touch to schedule a free, no-obligation consultation.
+              <CardDescription className="text-lg pt-2 text-muted-foreground">
+                Fill out the form and we'll send a staging link by tomorrow morning.
               </CardDescription>
             </CardHeader>
             <CardContent>

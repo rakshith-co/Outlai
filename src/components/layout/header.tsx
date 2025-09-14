@@ -11,9 +11,9 @@ import { Icons } from '@/components/icons';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '/marketing-strategy', label: 'AI Strategy' },
-  { href: '/content-creation', label: 'AI Content' },
-  { href: '/dashboard', label: 'Dashboard' },
+  { href: '#services', label: 'Services' },
+  { href: '#work', label: 'Work' },
+  { href: '#pricing', label: 'Pricing' },
 ];
 
 export default function Header() {
@@ -33,7 +33,7 @@ export default function Header() {
     <header
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled ? 'bg-background/80 backdrop-blur-lg border-b' : 'bg-transparent'
+        isScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'
       )}
     >
       <div className="container mx-auto px-4">
@@ -41,7 +41,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
             <Icons.logo className="h-7 w-7" />
             <span className={cn('font-headline text-2xl font-medium tracking-tight')}>
-              Outlai
+              x Studio
             </span>
           </Link>
           
@@ -54,8 +54,8 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button asChild className="font-semibold">
-              <Link href="/contact">Book a Consultation</Link>
+            <Button asChild variant="ghost" className="font-semibold">
+              <Link href="/contact">Contact</Link>
             </Button>
           </div>
 
@@ -70,7 +70,7 @@ export default function Header() {
                     <div className="flex justify-between items-center border-b pb-4">
                         <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
                             <Icons.logo className="h-7 w-7" />
-                            <span className="font-headline text-2xl font-medium">Outlai</span>
+                            <span className="font-headline text-2xl font-medium">x Studio</span>
                         </Link>
                         <Button variant="ghost" size="icon" onClick={() => setSheetOpen(false)}>
                             <X className="h-6 w-6" />
@@ -87,10 +87,17 @@ export default function Header() {
                             {link.label}
                         </Link>
                         ))}
+                         <Link
+                            href="/contact"
+                            onClick={() => setSheetOpen(false)}
+                            className={cn('font-light text-foreground/80 hover:text-foreground', pathname === '/contact' && 'font-medium text-foreground')}
+                        >
+                            Contact
+                        </Link>
                     </nav>
                     <div className="mt-auto pt-8">
                         <Button asChild className="w-full text-base font-semibold">
-                            <Link href="/contact" onClick={() => setSheetOpen(false)}>Book a Consultation</Link>
+                            <Link href="/contact" onClick={() => setSheetOpen(false)}>Get my 24h Page</Link>
                         </Button>
                     </div>
                 </div>
