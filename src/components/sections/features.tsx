@@ -99,7 +99,7 @@ const renderCustomizedLabel = (props: any) => {
 
 export function Features() {
   return (
-    <section id="services" className="w-full py-16 md:py-24 bg-background">
+    <section id="services" className="w-full bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
