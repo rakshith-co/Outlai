@@ -48,6 +48,9 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
+    // Always open Calendly in a new tab
+    window.open("https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09", '_blank');
+
     try {
       // Add a new document with a generated id.
       const docRef = await addDoc(collection(db, "contacts"), {
@@ -58,18 +61,15 @@ export function ContactForm() {
 
       toast({
         title: "Details saved!",
-        description: "Redirecting you to book a meeting...",
+        description: "You've been redirected to book a meeting.",
       });
-      
-      // Redirect to Calendly
-      router.push("https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09");
 
     } catch (error) {
       console.error("Error adding document: ", error);
       toast({
         variant: "destructive",
         title: "Error",
-        description: "There was an error saving your details. Please try again.",
+        description: "There was an error saving your details, but you can still book a meeting.",
       });
     } finally {
       setIsSubmitting(false);
