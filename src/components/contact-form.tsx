@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -15,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, ArrowRight } from "lucide-react";
+import { Loader2, ArrowRight, User, Building2, Mail, Phone, Settings } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 import { db } from "@/lib/firebase";
@@ -86,7 +87,10 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} />
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input placeholder="Your Name" {...field} className="pl-10" />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,7 +103,10 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Business Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Acme Inc." {...field} />
+                  <div className="relative">
+                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input placeholder="Acme Inc." {...field} className="pl-10" />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -114,7 +121,10 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Email Address</FormLabel>
                   <FormControl>
-                    <Input placeholder="you@example.com" {...field} />
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input placeholder="you@example.com" {...field} className="pl-10" />
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -127,7 +137,10 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Phone Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="(123) 456-7890" {...field} />
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input placeholder="(123) 456-7890" {...field} className="pl-10" />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -140,19 +153,22 @@ export function ContactForm() {
             render={({ field }) => (
                 <FormItem>
                 <FormLabel>What you need</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                    <SelectTrigger>
-                        <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                        <SelectItem value="seo">SEO</SelectItem>
-                        <SelectItem value="creatives">Creatives</SelectItem>
-                        <SelectItem value="social">Social</SelectItem>
-                        <SelectItem value="all-in">All-in</SelectItem>
-                    </SelectContent>
-                </Select>
+                 <FormControl>
+                    <div className="relative">
+                       <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <SelectTrigger className="pl-10">
+                                <SelectValue placeholder="Select a service" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="seo">SEO</SelectItem>
+                                <SelectItem value="creatives">Creatives</SelectItem>
+                                <SelectItem value="social">Social</SelectItem>
+                                <SelectItem value="all-in">All-in</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </FormControl>
                 <FormMessage />
                 </FormItem>
             )}
@@ -165,3 +181,5 @@ export function ContactForm() {
     </Form>
   );
 }
+
+    
