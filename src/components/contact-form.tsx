@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, User, Building2, Mail, Phone, Settings, ArrowRight } from "lucide-react";
+import { Loader2, User, Building2, Mail, Phone, Settings, CalendarDays } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 import { db } from "@/lib/firebase";
@@ -175,8 +175,8 @@ export function ContactForm() {
             )}
         />
         <div className="pt-6 text-center">
-            <Button type="submit" disabled={isSubmitting} className="w-full max-w-xs mx-auto text-base font-semibold" size="lg">
-                {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book a meeting <ArrowRight className="ml-2" /></>}
+            <Button type="submit" disabled={isSubmitting} className="w-full max-w-xs mx-auto text-base font-semibold primary-bar-glow" size="lg">
+                {isSubmitting ? <Loader2 className="animate-spin" /> : <><CalendarDays className="mr-2" />Book a meeting</>}
             </Button>
         </div>
       </form>
