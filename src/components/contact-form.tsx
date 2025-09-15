@@ -147,7 +147,7 @@ export function ContactForm() {
             )}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 pt-2">
             <FormField
                 control={form.control}
                 name="service"
@@ -174,7 +174,7 @@ export function ContactForm() {
                     </FormItem>
                 )}
             />
-            <div className="flex flex-col justify-end">
+            <div className="flex flex-col justify-end pt-2 md:pt-0">
                 <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold primary-bar-glow" size="lg">
                     {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book Call <ArrowRight className="ml-2" /></>}
                 </Button>
