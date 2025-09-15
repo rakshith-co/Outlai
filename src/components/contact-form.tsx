@@ -147,16 +147,16 @@ export function ContactForm() {
             )}
           />
         </div>
-        <div className="max-w-xs mx-auto">
-            <FormField
-                control={form.control}
-                name="service"
-                render={({ field }) => (
-                    <FormItem>
-                    <FormLabel className="text-center w-full">What you need</FormLabel>
+        <FormField
+            control={form.control}
+            name="service"
+            render={({ field }) => (
+                <FormItem>
+                  <div className="max-w-xs mx-auto">
+                    <FormLabel className="text-center w-full block">What you need</FormLabel>
                     <FormControl>
-                        <div className="relative">
-                        <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                        <div className="relative mt-2">
+                          <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <SelectTrigger className="pl-10">
                                     <SelectValue placeholder="Select a service" />
@@ -170,11 +170,11 @@ export function ContactForm() {
                             </Select>
                         </div>
                     </FormControl>
-                    <FormMessage />
-                    </FormItem>
-                )}
-            />
-        </div>
+                  </div>
+                <FormMessage />
+                </FormItem>
+            )}
+        />
         <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold primary-bar-glow hidden" size="lg">
             {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book Call <ArrowRight className="ml-2" /></>}
         </Button>
