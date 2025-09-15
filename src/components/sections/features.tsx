@@ -147,7 +147,7 @@ export function Features() {
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.05)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.time.data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted))"} />
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted))"} className={index === 0 ? 'primary-bar-glow' : ''} />
                                     ))}
                                     <LabelList dataKey="label" position="right" content={renderCustomizedLabel} style={{ whiteSpace: 'nowrap' }} />
                                 </Bar>
@@ -163,7 +163,7 @@ export function Features() {
                                 <Tooltip content={<CustomTooltip />} cursor={{fill: 'hsl(var(--primary) / 0.05)'}}/>
                                 <Bar dataKey="value" radius={[0, 8, 8, 0]} barSize={30}>
                                     {feature.comparison.cost.data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted))"} />
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? "hsl(var(--primary))" : "hsl(var(--muted))"} className={index === 0 ? 'primary-bar-glow' : ''}/>
                                     ))}
                                     <LabelList dataKey="label" position="right" content={renderCustomizedLabel} style={{ whiteSpace: 'nowrap' }} />
                                  </Bar>

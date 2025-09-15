@@ -81,3 +81,9 @@
     @apply border border-white/10 bg-black/30 backdrop-blur-lg;
   }
 }
+
+@layer utilities {
+  .primary-bar-glow {
+    filter: drop-shadow(0 0 5px hsl(var(--primary) / 0.7));
+  }
+}
