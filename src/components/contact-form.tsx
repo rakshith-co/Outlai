@@ -152,7 +152,7 @@ export function ContactForm() {
             name="service"
             render={({ field }) => (
                 <FormItem>
-                <FormLabel>What you need</FormLabel>
+                <FormLabel className="text-center">What you need</FormLabel>
                 <FormControl>
                     <div className="relative">
                     <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
