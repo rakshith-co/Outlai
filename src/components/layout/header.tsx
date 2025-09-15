@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -38,7 +39,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center">
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
+            <Link href="/" className="flex items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-ring" onClick={() => setSheetOpen(false)}>
               <Icons.logo className="h-7 w-auto" />
             </Link>
           </div>
