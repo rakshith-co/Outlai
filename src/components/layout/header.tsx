@@ -53,7 +53,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center justify-end flex-1">
-            <Button asChild className="font-semibold shadow-lg shadow-white/10" size="sm">
+            <Button asChild className="font-semibold shadow-lg shadow-white/10 primary-bar-glow" size="sm">
               <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">
                 <CalendarDays className="h-4 w-4 mr-2" />
                 Book a Meeting
@@ -70,9 +70,11 @@ export default function Header() {
             <SheetContent side="right" className="w-[80vw] glassmorphic">
                 <div className="flex flex-col h-full">
                     <div className="flex justify-between items-center border-b pb-4">
-                        <Link href="/" className="block h-7 w-[104px]" onClick={() => setSheetOpen(false)}>
-                            <Icons.logo />
-                        </Link>
+                        <div className="relative h-7 w-[104px]">
+                            <Link href="/" onClick={() => setSheetOpen(false)}>
+                                <Icons.logo />
+                            </Link>
+                        </div>
                         <Button variant="ghost" size="icon" onClick={() => setSheetOpen(false)}>
                             <X className="h-6 w-6" />
                         </Button>
