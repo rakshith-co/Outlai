@@ -59,7 +59,7 @@ const SubConnector = () => (
 
 const stepsData = [
     {
-        icon: <Target className="w-5 h-5 text-foreground" />,
+        icon: <Target className="w-5 h-5 text-foreground primary-bar-glow" />,
         title: "Share your goals",
         description: "Tell us what you want to achieve, and we'll handle the 'how'.",
         subSteps: [
@@ -68,7 +68,7 @@ const stepsData = [
         ]
     },
     {
-        icon: <Rocket className="w-5 h-5 text-foreground" />,
+        icon: <Rocket className="w-5 h-5 text-foreground primary-bar-glow" />,
         title: "Outlai does the heavy lifting",
         description: "Our team builds, optimizes, and manages your marketing tasks at high speed.",
         subSteps: [
@@ -78,7 +78,7 @@ const stepsData = [
         ]
     },
     {
-        icon: <Check className="w-5 h-5 text-foreground" />,
+        icon: <Check className="w-5 h-5 text-foreground primary-bar-glow" />,
         title: "You launch, focus, and grow",
         description: "With marketing on autopilot, you can get back to building your product.",
         subSteps: [
