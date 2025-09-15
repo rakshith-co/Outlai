@@ -21,18 +21,6 @@ export default function ContactPage() {
             <ContactForm />
           </CardContent>
         </Card>
-        <div className="mt-6 text-center">
-            <Card className="inline-block">
-                <CardContent className="p-2">
-                     <Button asChild className="font-semibold text-base" size="lg">
-                        <Link href="#contact">
-                            Book Call
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                    </Button>
-                </CardContent>
-            </Card>
-        </div>
       </div>
     </main>
   );

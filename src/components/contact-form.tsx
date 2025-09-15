@@ -78,7 +78,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FormField
             control={form.control}
@@ -147,7 +147,7 @@ export function ContactForm() {
             )}
           />
         </div>
-        <div className="mt-2">
+        <div className="mt-2 pt-4">
             <FormField
                 control={form.control}
                 name="service"
@@ -177,9 +177,11 @@ export function ContactForm() {
                 )}
             />
         </div>
-        <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold primary-bar-glow hidden" size="lg">
-            {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book Call <ArrowRight className="ml-2" /></>}
-        </Button>
+        <div className="pt-6 text-center">
+            <Button type="submit" disabled={isSubmitting} className="w-full max-w-xs mx-auto text-base font-semibold" size="lg">
+                {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book a meeting <ArrowRight className="ml-2" /></>}
+            </Button>
+        </div>
       </form>
     </Form>
   );
