@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50 gap-2">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-center md:text-left text-xs text-foreground/50 gap-4 md:gap-2">
           <p>&copy; {new Date().getFullYear()} Outlai, Inc. All rights reserved.</p>
           <div className="flex flex-col sm:flex-row items-center gap-x-4 gap-y-2">
             <p>Bangalore, Karnataka</p>
