@@ -51,11 +51,17 @@ export function Hero() {
                 <CardContent className="p-4">
                     <div className="flex items-center space-x-4 text-sm font-light text-muted-foreground">
                         <span>AI SEO</span>
-                        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        <div className="w-4 h-4 rounded-full orbit-glow flex items-center justify-center">
+                          <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        </div>
                         <span>Creatives</span>
-                        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        <div className="w-4 h-4 rounded-full orbit-glow flex items-center justify-center" style={{animationDelay: '0.75s'}}>
+                           <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        </div>
                         <span>Social</span>
-                        <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        <div className="w-4 h-4 rounded-full orbit-glow flex items-center justify-center" style={{animationDelay: '1.5s'}}>
+                          <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        </div>
                         <span>Automation</span>
                     </div>
                 </CardContent>

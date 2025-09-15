@@ -100,10 +100,19 @@ export default {
             opacity: '0',
           },
         },
+        'orbit': {
+          '0%': {
+            transform: 'rotate(0deg) translateX(0.5rem) rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(360deg) translateX(0.5rem) rotate(-360deg)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.3s ease-out',
         'accordion-up': 'accordion-up 0.3s ease-out',
+        'orbit': 'orbit 3s linear infinite',
       },
     },
   },
