@@ -21,8 +21,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex justify-center md:justify-start">
-            <Link href="/" className="flex items-center gap-2">
-              <Icons.logo className="h-7 w-auto" />
+            <Link href="/" className="block h-7 w-[104px]">
+              <Icons.logo />
             </Link>
           </div>
 

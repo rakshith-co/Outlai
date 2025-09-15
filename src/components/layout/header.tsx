@@ -39,8 +39,8 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center">
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="flex items-center gap-2 rounded-md focus:outline-none focus:ring-2 focus:ring-ring" onClick={() => setSheetOpen(false)}>
-              <Icons.logo className="h-7 w-auto" />
+            <Link href="/" className="block h-7 w-[104px] rounded-md focus:outline-none focus:ring-2 focus:ring-ring" onClick={() => setSheetOpen(false)}>
+              <Icons.logo />
             </Link>
           </div>
           
@@ -70,8 +70,8 @@ export default function Header() {
             <SheetContent side="right" className="w-[80vw] glassmorphic">
                 <div className="flex flex-col h-full">
                     <div className="flex justify-between items-center border-b pb-4">
-                        <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
-                            <Icons.logo className="h-7 w-auto" />
+                        <Link href="/" className="block h-7 w-[104px]" onClick={() => setSheetOpen(false)}>
+                            <Icons.logo />
                         </Link>
                         <Button variant="ghost" size="icon" onClick={() => setSheetOpen(false)}>
                             <X className="h-6 w-6" />
