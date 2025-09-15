@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, CalendarDays } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -50,8 +50,11 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <Button asChild className="font-semibold">
-              <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">Book a Meeting</Link>
+            <Button asChild className="font-semibold shadow-lg shadow-white/10" size="sm">
+              <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">
+                <CalendarDays className="h-4 w-4 mr-2" />
+                Book a Meeting
+              </Link>
             </Button>
           </div>
 
