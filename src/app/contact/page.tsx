@@ -1,5 +1,8 @@
 import { ContactForm } from '@/components/contact-form';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ContactPage() {
   return (
@@ -18,6 +21,18 @@ export default function ContactPage() {
             <ContactForm />
           </CardContent>
         </Card>
+        <div className="mt-6 text-center">
+            <Card className="inline-block">
+                <CardContent className="p-2">
+                     <Button asChild className="font-semibold text-base" size="lg">
+                        <Link href="#contact">
+                            Book Call
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </CardContent>
+            </Card>
+        </div>
       </div>
     </main>
   );
