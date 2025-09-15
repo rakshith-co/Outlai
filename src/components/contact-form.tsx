@@ -147,36 +147,33 @@ export function ContactForm() {
             )}
           />
         </div>
-        <div className="mt-2 pt-4">
-            <FormField
-                control={form.control}
-                name="service"
-                render={({ field }) => (
-                    <FormItem>
-                    <div className="max-w-xs mx-auto">
-                        <FormLabel className="text-center w-full block">What you need</FormLabel>
-                        <FormControl>
-                            <div className="relative mt-2">
-                            <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                    <SelectTrigger className="pl-10">
-                                        <SelectValue placeholder="Select a service" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="seo">SEO</SelectItem>
-                                        <SelectItem value="creatives">Creatives</SelectItem>
-                                        <SelectItem value="social">Social</SelectItem>
-                                        <SelectItem value="all-in">All-in</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                        </FormControl>
+
+        <FormField
+            control={form.control}
+            name="service"
+            render={({ field }) => (
+                <FormItem>
+                <FormLabel>What you need</FormLabel>
+                <FormControl>
+                    <div className="relative">
+                    <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <SelectTrigger className="pl-10">
+                                <SelectValue placeholder="Select a service" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="seo">SEO</SelectItem>
+                                <SelectItem value="creatives">Creatives</SelectItem>
+                                <SelectItem value="social">Social</SelectItem>
+                                <SelectItem value="all-in">All-in</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
-                    <FormMessage />
-                    </FormItem>
-                )}
-            />
-        </div>
+                </FormControl>
+                <FormMessage />
+                </FormItem>
+            )}
+        />
         <div className="pt-6 text-center">
             <Button type="submit" disabled={isSubmitting} className="w-full max-w-xs mx-auto text-base font-semibold" size="lg">
                 {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book a meeting <ArrowRight className="ml-2" /></>}
