@@ -36,12 +36,14 @@ export default function Header() {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
-            <Icons.logo className="h-7 w-auto" />
-          </Link>
+        <div className="flex h-16 items-center">
+          <div className="flex-1 flex justify-start">
+            <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
+              <Icons.logo className="h-7 w-auto" />
+            </Link>
+          </div>
           
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center justify-center gap-1 flex-1">
             {navLinks.map((link) => (
               <Button key={link.href} variant="ghost" asChild className={cn('text-sm font-normal', pathname === link.href && 'font-medium bg-muted')}>
                 <Link href={link.href}>{link.label}</Link>
@@ -49,7 +51,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center justify-end flex-1">
             <Button asChild className="font-semibold shadow-lg shadow-white/10" size="sm">
               <Link href="https://calendly.com/djrakshithkumar/20min?back=1&month=2025-09">
                 <CalendarDays className="h-4 w-4 mr-2" />
@@ -59,7 +61,7 @@ export default function Header() {
           </div>
 
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="md:hidden ml-auto">
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
