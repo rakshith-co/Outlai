@@ -21,9 +21,11 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex justify-center md:justify-start">
-            <Link href="/" className="block h-7 w-[104px]">
-              <Icons.logo />
-            </Link>
+            <div className="relative h-7 w-[104px]">
+                <Link href="/">
+                    <Icons.logo />
+                </Link>
+            </div>
           </div>
 
           <div className="flex justify-center items-center gap-6">
@@ -43,9 +45,12 @@ export default function Footer() {
             </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/50 gap-2">
           <p>&copy; {new Date().getFullYear()} Outlai, Inc. All rights reserved.</p>
-          <p>Outlai — we make business simpler.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-x-4 gap-y-2">
+            <p>Bangalore, Karnataka</p>
+            <a href="mailto:growth@outlai.studio" className="hover:text-foreground transition-colors">growth@outlai.studio</a>
+          </div>
         </div>
       </div>
     </footer>
