@@ -147,32 +147,34 @@ export function ContactForm() {
             )}
           />
         </div>
-        <FormField
-            control={form.control}
-            name="service"
-            render={({ field }) => (
-                <FormItem>
-                <FormLabel className="text-center">What you need</FormLabel>
-                <FormControl>
-                    <div className="relative">
-                    <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <SelectTrigger className="pl-10">
-                                <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="seo">SEO</SelectItem>
-                                <SelectItem value="creatives">Creatives</SelectItem>
-                                <SelectItem value="social">Social</SelectItem>
-                                <SelectItem value="all-in">All-in</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
-                </FormControl>
-                <FormMessage />
-                </FormItem>
-            )}
-        />
+        <div className="max-w-xs mx-auto">
+            <FormField
+                control={form.control}
+                name="service"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel className="text-center w-full">What you need</FormLabel>
+                    <FormControl>
+                        <div className="relative">
+                        <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <SelectTrigger className="pl-10">
+                                    <SelectValue placeholder="Select a service" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="seo">SEO</SelectItem>
+                                    <SelectItem value="creatives">Creatives</SelectItem>
+                                    <SelectItem value="social">Social</SelectItem>
+                                    <SelectItem value="all-in">All-in</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+            />
+        </div>
         <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold primary-bar-glow hidden" size="lg">
             {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book Call <ArrowRight className="ml-2" /></>}
         </Button>
