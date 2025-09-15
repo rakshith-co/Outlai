@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, ArrowRight, User, Building2, Mail, Phone, Settings } from "lucide-react";
+import { Loader2, User, Building2, Mail, Phone, Settings, CalendarDays } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 import { db } from "@/lib/firebase";
@@ -147,39 +147,40 @@ export function ContactForm() {
             )}
           />
         </div>
-        <FormField
-            control={form.control}
-            name="service"
-            render={({ field }) => (
-                <FormItem>
-                <FormLabel>What you need</FormLabel>
-                 <FormControl>
-                    <div className="relative">
-                       <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <SelectTrigger className="pl-10">
-                                <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="seo">SEO</SelectItem>
-                                <SelectItem value="creatives">Creatives</SelectItem>
-                                <SelectItem value="social">Social</SelectItem>
-                                <SelectItem value="all-in">All-in</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
-                </FormControl>
-                <FormMessage />
-                </FormItem>
-            )}
-        />
-        
-        <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold" size="lg">
-          {isSubmitting ? <Loader2 className="animate-spin" /> : <>Book Call <ArrowRight className="ml-2" /></>}
-        </Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <FormField
+                control={form.control}
+                name="service"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>What you need</FormLabel>
+                    <FormControl>
+                        <div className="relative">
+                        <Settings className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <SelectTrigger className="pl-10">
+                                    <SelectValue placeholder="Select a service" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="seo">SEO</SelectItem>
+                                    <SelectItem value="creatives">Creatives</SelectItem>
+                                    <SelectItem value="social">Social</SelectItem>
+                                    <SelectItem value="all-in">All-in</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+            />
+            <div className="flex flex-col justify-end">
+                <Button type="submit" disabled={isSubmitting} className="w-full text-base font-semibold" size="lg">
+                    {isSubmitting ? <Loader2 className="animate-spin" /> : <><CalendarDays className="mr-2" /> Book Call</>}
+                </Button>
+            </div>
+        </div>
       </form>
     </Form>
   );
 }
-
-    
