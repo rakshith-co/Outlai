@@ -11,8 +11,8 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: '#', icon: <Linkedin className="h-5 w-5" /> },
-  { href: '#', icon: <Instagram className="h-5 w-5" /> },
+  { href: 'https://www.linkedin.com/company/outlai/', icon: <Linkedin className="h-5 w-5" /> },
+  { href: 'https://www.instagram.com/outlai.studio', icon: <Instagram className="h-5 w-5" /> },
 ];
 
 export default function Footer() {
