@@ -19,7 +19,7 @@ export function Cta() {
           <Card className="shadow-2xl glassmorphic relative">
             <CardHeader className="text-center">
               <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">
-                Ready to make your business easier?
+                Make business effortless — starting now.
               </h2>
               <CardDescription className="text-lg pt-2 text-muted-foreground">
                 Schedule a 20-minute call to see how we can help.

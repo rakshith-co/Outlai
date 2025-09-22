@@ -28,7 +28,7 @@ export function Hero() {
           We handle the rest.
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-base md:text-lg text-muted-foreground font-light">
-          Outlai makes business easier — from AI-ready SEO to creative content and digital operations. What usually takes weeks, we deliver in hours.
+          We take the heavy lifting out of business. From ideas to execution, progress comes quicker than you expect.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-semibold text-base w-full sm:w-auto">
@@ -44,7 +44,7 @@ export function Hero() {
           </Button>
         </div>
         <p className="mt-4 text-xs text-muted-foreground max-w-lg mx-auto">
-          Built for businesses that want to stay ahead without worrying about AI trends and marketing complexity.
+          Built for businesses that want clarity and growth — without the confusion or delays.
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
             <Card className="glassmorphic rounded-2xl">

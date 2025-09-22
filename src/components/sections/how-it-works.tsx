@@ -113,7 +113,7 @@ export function HowItWorks() {
             How It Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground font-light">
-            Our process is simple, fast, and transparent to get you results.
+            A simple, straightforward approach — designed to deliver measurable impact.
           </p>
         </div>
         

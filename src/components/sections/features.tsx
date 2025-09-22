@@ -12,7 +12,7 @@ const featureList = [
   {
     icon: <BrainCircuit className="w-8 h-8" />,
     title: "AI-Ready Landing Pages & SEO",
-    description: "Not just Google SEO. Agent SEO. We optimize your site so AI agents like ChatGPT can find and recommend your business first.",
+    description: "We go past Google. Agent SEO ensures your business is the one AI agents highlight.",
     comparison: {
       time: {
         title: "Time to Delivery",
@@ -33,7 +33,7 @@ const featureList = [
   {
     icon: <Zap className="w-8 h-8" />,
     title: "Creative Content, Made Fast",
-    description: "Videos, reels, carousels, and campaigns—cut from weeks to hours. Choose from quick creative assets or fully managed growth funnels.",
+    description: "Content to campaigns, reels to funnels — delivered with speed to keep momentum alive.",
     comparison: {
       time: {
         title: "Time to Delivery",
@@ -54,7 +54,7 @@ const featureList = [
   {
     icon: <Bot className="w-8 h-8" />,
     title: "Social & Marketing Ops",
-    description: "End-to-end management of your digital presence. From YouTube SEO to Instagram funnels, we run the campaigns while you scale.",
+    description: "Complete management of your digital presence — from YouTube SEO to Instagram funnels, we handle growth so you can scale.",
     comparison: {
       time: {
         title: "Time to Impact",
@@ -106,7 +106,7 @@ export function Features() {
             What We Do
           </h2>
           <p className="mt-4 text-lg text-muted-foreground font-light">
-            We deliver high-impact results with speed and precision, saving you time and money.
+            Faster results. Sharper execution. Smarter use of your money.
           </p>
         </div>
         
