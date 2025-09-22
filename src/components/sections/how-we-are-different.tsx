@@ -12,19 +12,19 @@ const differentiators = [
     {
         icon: <Hand />,
         title: "Brand-First AI",
-        description: "We start with your brand's soul, not a blank prompt. If you have a brand identity, we retain it. If you don't, we create one from scratch to ensure everything we produce is uniquely yours.",
+        description: "Your brand is our blueprint. We use AI to amplify your unique identity, ensuring every piece of content feels authentic and builds brand loyalty.",
         positionClasses: "top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2"
     },
     {
         icon: <GitBranch />,
         title: "We Direct",
-        description: "We direct the AI, personalizing the workflow for your specific case. We're not just running scripts; we are conductors orchestrating a symphony of tools to create a masterpiece that reflects your business.",
+        description: "We don't just run scripts; we direct a custom workflow for your business. This means the AI works for you, delivering targeted results, not generic outputs.",
         positionClasses: "top-3/4 left-[33%] -translate-x-1/2 -translate-y-1/2"
     },
     {
         icon: <Heart />,
         title: "Quality at Speed",
-        description: "Our priority is making sure everything we ship has the soul of your business. We move fast, but we never compromise on the quality and integrity of your brand. You get the outcome, that simple.",
+        description: "We deliver high-quality, brand-aligned work in hours, not weeks. You get the speed of AI with the assurance of expert oversight and tangible outcomes.",
         positionClasses: "top-3/4 left-[67%] -translate-x-1/2 -translate-y-1/2"
     }
 ];
