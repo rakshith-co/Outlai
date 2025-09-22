@@ -18,7 +18,7 @@ const differentiators = [
     {
         icon: <GitBranch />,
         title: "We Direct",
-        description: "We don't just run scripts; we direct a custom workflow for your business. This means the AI works for you, delivering targeted results, not generic outputs.",
+        description: "Our AI is guided by real-world data and testimonials from successful businesses and agencies. This ensures the output is not generic, but is based on proven strategies that deliver tangible results.",
         positionClasses: "top-3/4 left-[33%] -translate-x-1/2 -translate-y-1/2"
     },
     {
