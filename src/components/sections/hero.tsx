@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Package } from "lucide-react";
@@ -48,19 +49,19 @@ export function Hero() {
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
             <Card className="glassmorphic rounded-2xl">
-                <CardContent className="p-4">
-                    <div className="flex items-center space-x-4 text-sm font-light text-muted-foreground">
+                <CardContent className="p-2 md:p-4">
+                    <div className="flex items-center space-x-2 md:space-x-4 text-xs md:text-sm font-light text-muted-foreground">
                         <span>AI SEO</span>
-                        <div className="w-4 h-4 rounded-full orbit-glow flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        <div className="w-3 h-3 md:w-4 md:h-4 rounded-full orbit-glow flex items-center justify-center">
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
                         </div>
                         <span>Creatives</span>
-                        <div className="w-4 h-4 rounded-full orbit-glow flex items-center justify-center" style={{animationDelay: '0.75s'}}>
-                           <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        <div className="w-3 h-3 md:w-4 md:h-4 rounded-full orbit-glow flex items-center justify-center" style={{animationDelay: '0.75s'}}>
+                           <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
                         </div>
                         <span>Social</span>
-                        <div className="w-4 h-4 rounded-full orbit-glow flex items-center justify-center" style={{animationDelay: '1.5s'}}>
-                          <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
+                        <div className="w-3 h-3 md:w-4 md:h-4 rounded-full orbit-glow flex items-center justify-center" style={{animationDelay: '1.5s'}}>
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 shadow-[0_0_8px_theme(colors.green.500)]" />
                         </div>
                         <span>Automation</span>
                     </div>
