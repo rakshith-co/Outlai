@@ -2,7 +2,6 @@
 import { Button } from '@/components/ui/button';
 import { Users, ArrowRight, Eye, MessageSquare, Network, Rocket } from 'lucide-react';
 import Link from 'next/link';
-import { Icons } from '@/components/icons';
 
 export const metadata = {
   title: 'Community | Outlai',
@@ -69,7 +68,6 @@ export default function CommunityPage() {
             <div className="mt-8">
               <Button asChild size="lg" className="font-semibold primary-bar-glow">
                 <Link href="https://discord.gg/aYYRnmZU" target="_blank" rel="noopener noreferrer">
-                  <Icons.discord className="mr-2 h-5 w-5" />
                   Join our Discord
                 </Link>
               </Button>
