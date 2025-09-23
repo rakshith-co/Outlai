@@ -13,25 +13,31 @@ const benefits = [
         icon: <Eye className="w-6 h-6 text-primary" />,
         title: "Exclusive Insights",
         description: "Early access to AI marketing trends and strategies.",
-        position: "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[calc(100%+2rem)]"
+        desktopPosition: "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[calc(100%+2rem)]",
+        mobileOrder: "order-1",
+        showOnMobile: true,
     },
     {
         icon: <Rocket className="w-6 h-6 text-primary" />,
         title: "Early Access",
         description: "Be the first to try new AI tools and features.",
-        position: "absolute top-1/2 right-0 translate-x-[calc(100%+2rem)] -translate-y-1/2"
+        desktopPosition: "absolute top-1/2 right-0 translate-x-[calc(100%+2rem)] -translate-y-1/2",
+        showOnMobile: false,
     },
     {
         icon: <Network className="w-6 h-6 text-primary" />,
         title: "Peer Networking",
         description: "Connect with ambitious entrepreneurs.",
-        position: "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(100%+2rem)]"
+        desktopPosition: "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(100%+2rem)]",
+        mobileOrder: "order-3",
+        showOnMobile: true,
     },
     {
         icon: <MessageSquare className="w-6 h-6 text-primary" />,
         title: "Direct Access",
         description: "Interact directly with the Outlai team.",
-        position: "absolute top-1/2 left-0 -translate-x-[calc(100%+2rem)] -translate-y-1/2"
+        desktopPosition: "absolute top-1/2 left-0 -translate-x-[calc(100%+2rem)] -translate-y-1/2",
+        showOnMobile: false,
     }
 ]
 
@@ -48,13 +54,12 @@ export default function CommunityPage() {
               }}
             />
         </div>
-      <div className="relative w-full max-w-sm" style={{ aspectRatio: '1 / 1' }}>
-        {/* Lines connecting the hub to the benefits */}
-        <div className="absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
-        <div className="absolute h-px w-full bg-border/50 left-0 top-1/2 -translate-y-1/2"></div>
+      <div className="relative w-full max-w-sm md:max-w-md md:aspect-[1/1]">
+        {/* Lines connecting the hub to the benefits (desktop only) */}
+        <div className="hidden md:block absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
+        <div className="hidden md:block absolute h-px w-full bg-border/50 left-0 top-1/2 -translate-y-1/2"></div>
         
-        {/* Central Hub */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 h-full">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center p-0 md:p-8 h-full md:order-2">
             <div className="relative inline-block bg-primary/10 p-5 rounded-full mb-4 shadow-lg primary-bar-glow">
                 <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
                 <Users className="w-12 h-12 text-muted-foreground relative" />
@@ -74,22 +79,41 @@ export default function CommunityPage() {
             </div>
         </div>
 
-        {/* Benefits orbiting the hub */}
-        {benefits.map((benefit, index) => (
-            <div key={index} className={`${benefit.position} w-64`}>
-                <div className="glassmorphic p-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
-                    <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 bg-muted p-2 rounded-lg">
-                           {benefit.icon}
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-base">{benefit.title}</h3>
-                            <p className="text-sm text-muted-foreground font-light">{benefit.description}</p>
+        <div className="md:hidden flex flex-col items-center gap-8 mt-12 w-full">
+            {benefits.filter(b => b.showOnMobile).map((benefit, index) => (
+                <div key={index} className="w-full max-w-sm">
+                    <div className="glassmorphic p-4 rounded-lg shadow-lg">
+                        <div className="flex items-start space-x-3">
+                            <div className="flex-shrink-0 bg-muted p-2 rounded-lg">
+                               {benefit.icon}
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-base">{benefit.title}</h3>
+                                <p className="text-sm text-muted-foreground font-light">{benefit.description}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        ))}
+            ))}
+        </div>
+        
+        <div className="hidden md:block">
+            {benefits.map((benefit, index) => (
+                <div key={index} className={`${benefit.desktopPosition} w-64`}>
+                    <div className="glassmorphic p-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                        <div className="flex items-start space-x-3">
+                            <div className="flex-shrink-0 bg-muted p-2 rounded-lg">
+                               {benefit.icon}
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-base">{benefit.title}</h3>
+                                <p className="text-sm text-muted-foreground font-light">{benefit.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
       </div>
     </main>
   );
