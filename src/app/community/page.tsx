@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
 import { Button } from '@/components/ui/button';
 import { Users, ArrowRight, Eye, MessageSquare, Network, Rocket } from 'lucide-react';
 import Link from 'next/link';
@@ -10,69 +10,78 @@ export const metadata = {
 
 const benefits = [
     {
-        icon: <Eye className="w-8 h-8 text-primary" />,
+        icon: <Eye className="w-6 h-6 text-primary" />,
         title: "Exclusive Insights",
-        description: "Get early access to AI marketing trends, strategies, and case studies before anyone else.",
+        description: "Early access to AI marketing trends and strategies.",
+        position: "top-0 left-1/2 -translate-x-1/2 -translate-y-full"
     },
     {
-        icon: <MessageSquare className="w-8 h-8 text-primary" />,
-        title: "Direct Access",
-        description: "Interact directly with the Outlai team, ask questions, and get real-time feedback on your ideas.",
-    },
-    {
-        icon: <Network className="w-8 h-8 text-primary" />,
-        title: "Peer Networking",
-        description: "Connect with a curated community of ambitious entrepreneurs and marketers who are building the future.",
-    },
-    {
-        icon: <Rocket className="w-8 h-8 text-primary" />,
+        icon: <Rocket className="w-6 h-6 text-primary" />,
         title: "Early Access",
-        description: "Be the first to try our new AI tools, services, and features, and help shape our roadmap.",
+        description: "Be the first to try new AI tools and features.",
+        position: "top-1/2 right-0 translate-x-full"
+    },
+    {
+        icon: <Network className="w-6 h-6 text-primary" />,
+        title: "Peer Networking",
+        description: "Connect with ambitious entrepreneurs.",
+        position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-full"
+    },
+    {
+        icon: <MessageSquare className="w-6 h-6 text-primary" />,
+        title: "Direct Access",
+        description: "Interact directly with the Outlai team.",
+        position: "top-1/2 left-0 -translate-x-full"
     }
 ]
 
 export default function CommunityPage() {
   return (
-    <main className="container mx-auto px-4 py-16 md:py-24">
-      <div className="max-w-3xl mx-auto text-center">
-        <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
-            <Users className="w-10 h-10 text-primary" />
-        </div>
-        <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
-          Join the Outlai Community
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground font-light">
-          Connect, learn, and grow with a network of forward-thinking founders, marketers, and AI enthusiasts.
-        </p>
-      </div>
+    <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[80vh]">
+      <div className="relative w-full max-w-4xl flex items-center justify-center">
 
-      <div className="max-w-4xl mx-auto mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-                <Card key={index} className="glassmorphic text-center">
-                    <CardHeader className="items-center">
-                        <div className="p-3 bg-primary/10 rounded-full mb-2">
+        {/* Lines connecting the hub to the benefits */}
+        <div className="absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
+        <div className="absolute h-px w-full bg-border/50 top-1/2 left-0 -translate-y-1/2"></div>
+        
+        {/* Central Hub */}
+        <div className="relative z-10 flex flex-col items-center text-center p-8">
+            <div className="relative inline-block bg-primary/10 p-5 rounded-full mb-4 shadow-lg primary-bar-glow">
+                <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
+                <Users className="w-12 h-12 text-primary relative" />
+            </div>
+            <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
+              Join the Outlai Community
+            </h1>
+            <p className="mt-4 max-w-md text-lg text-muted-foreground font-light">
+              Connect, learn, and grow with a network of forward-thinking founders, marketers, and AI enthusiasts.
+            </p>
+            <div className="mt-8">
+              <Button asChild size="lg" className="font-semibold primary-bar-glow">
+                <Link href="#">
+                  Join our Discord <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+        </div>
+
+        {/* Benefits orbiting the hub */}
+        {benefits.map((benefit, index) => (
+            <div key={index} className={`absolute ${benefit.position} w-56`}>
+                <div className="glassmorphic p-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                    <div className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 bg-primary/10 p-2 rounded-full">
                            {benefit.icon}
                         </div>
-                        <CardTitle>{benefit.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground font-light">{benefit.description}</p>
-                    </CardContent>
-                </Card>
-            ))}
-        </div>
+                        <div>
+                            <h3 className="font-semibold text-base">{benefit.title}</h3>
+                            <p className="text-sm text-muted-foreground font-light">{benefit.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
       </div>
-
-      <div className="mt-16 text-center">
-          <p className="text-xl font-light mb-4">Ready to join the conversation?</p>
-          <Button asChild size="lg" className="font-semibold primary-bar-glow">
-            <Link href="#">
-              Join our Discord <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-      </div>
-
     </main>
   );
 }
