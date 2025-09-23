@@ -13,25 +13,25 @@ const benefits = [
         icon: <Eye className="w-6 h-6 text-primary" />,
         title: "Exclusive Insights",
         description: "Early access to AI marketing trends and strategies.",
-        position: "top-0 left-1/2 -translate-x-1/2 -translate-y-[calc(100%+2rem)]"
+        position: "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[calc(100%+2rem)]"
     },
     {
         icon: <Rocket className="w-6 h-6 text-primary" />,
         title: "Early Access",
         description: "Be the first to try new AI tools and features.",
-        position: "top-1/2 right-0 translate-x-[calc(100%+2rem)] -translate-y-1/2"
+        position: "absolute top-1/2 right-0 translate-x-[calc(100%+2rem)] -translate-y-1/2"
     },
     {
         icon: <Network className="w-6 h-6 text-primary" />,
         title: "Peer Networking",
         description: "Connect with ambitious entrepreneurs.",
-        position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(100%+2rem)]"
+        position: "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[calc(100%+2rem)]"
     },
     {
         icon: <MessageSquare className="w-6 h-6 text-primary" />,
         title: "Direct Access",
         description: "Interact directly with the Outlai team.",
-        position: "top-1/2 left-0 -translate-x-[calc(100%+2rem)] -translate-y-1/2"
+        position: "absolute top-1/2 left-0 -translate-x-[calc(100%+2rem)] -translate-y-1/2"
     }
 ]
 
@@ -40,8 +40,8 @@ export default function CommunityPage() {
     <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
       <div className="relative w-full max-w-sm" style={{ aspectRatio: '1 / 1' }}>
         {/* Lines connecting the hub to the benefits */}
-        <div className="absolute w-px h-[calc(100%+4rem)] bg-border/50 top-[-2rem] left-1/2 -translate-x-1/2"></div>
-        <div className="absolute h-px w-[calc(100%+4rem)] bg-border/50 left-[-2rem] top-1/2 -translate-y-1/2"></div>
+        <div className="absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
+        <div className="absolute h-px w-full bg-border/50 left-0 top-1/2 -translate-y-1/2"></div>
         
         {/* Central Hub */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 h-full">
@@ -66,7 +66,7 @@ export default function CommunityPage() {
 
         {/* Benefits orbiting the hub */}
         {benefits.map((benefit, index) => (
-            <div key={index} className={`absolute ${benefit.position} w-64`}>
+            <div key={index} className={`${benefit.position} w-64`}>
                 <div className="glassmorphic p-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
                     <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0 bg-muted p-2 rounded-lg">
