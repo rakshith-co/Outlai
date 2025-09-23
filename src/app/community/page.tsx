@@ -19,7 +19,7 @@ const benefits = [
         icon: <Rocket className="w-6 h-6 text-primary" />,
         title: "Early Access",
         description: "Be the first to try new AI tools and features.",
-        position: "top-1/2 -right-4 translate-x-full"
+        position: "top-1/2 right-0 translate-x-[calc(100%+1rem)]"
     },
     {
         icon: <Network className="w-6 h-6 text-primary" />,
@@ -31,14 +31,14 @@ const benefits = [
         icon: <MessageSquare className="w-6 h-6 text-primary" />,
         title: "Direct Access",
         description: "Interact directly with the Outlai team.",
-        position: "top-1/2 -left-4 -translate-x-full"
+        position: "top-1/2 left-0 -translate-x-[calc(100%+1rem)]"
     }
 ]
 
 export default function CommunityPage() {
   return (
     <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[calc(100vh-10rem)]">
-      <div className="relative w-72 h-72">
+      <div className="relative w-full max-w-sm" style={{ aspectRatio: '1 / 1' }}>
         {/* Lines connecting the hub to the benefits */}
         <div className="absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
         <div className="absolute h-px w-full bg-border/50 top-1/2 left-0 -translate-y-1/2"></div>
