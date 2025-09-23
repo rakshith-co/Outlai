@@ -37,7 +37,17 @@ const benefits = [
 
 export default function CommunityPage() {
   return (
-    <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
+    <main className="relative container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[calc(100vh-5rem)]">
+        <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 bg-repeat"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--muted-foreground) / 0.1) 1px, transparent 1px)",
+                backgroundSize: "3rem 3rem",
+              }}
+            />
+        </div>
       <div className="relative w-full max-w-sm" style={{ aspectRatio: '1 / 1' }}>
         {/* Lines connecting the hub to the benefits */}
         <div className="absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
