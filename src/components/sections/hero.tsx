@@ -44,7 +44,7 @@ export function Hero() {
             </Link>
           </Button>
         </div>
-        <p className="mt-4 text-xs text-muted-foreground max-w-lg mx-auto">
+        <p className="mt-4 text-xs text-muted-foreground max-w-lg mx-auto hidden sm:block">
           Built for businesses that want clarity and growth — without the confusion or delays.
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
