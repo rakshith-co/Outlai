@@ -19,7 +19,7 @@ const benefits = [
         icon: <Rocket className="w-6 h-6 text-primary" />,
         title: "Early Access",
         description: "Be the first to try new AI tools and features.",
-        position: "top-1/2 right-0 translate-x-full"
+        position: "top-1/2 -right-4 translate-x-full"
     },
     {
         icon: <Network className="w-6 h-6 text-primary" />,
@@ -31,21 +31,20 @@ const benefits = [
         icon: <MessageSquare className="w-6 h-6 text-primary" />,
         title: "Direct Access",
         description: "Interact directly with the Outlai team.",
-        position: "top-1/2 left-0 -translate-x-full"
+        position: "top-1/2 -left-4 -translate-x-full"
     }
 ]
 
 export default function CommunityPage() {
   return (
-    <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[80vh]">
-      <div className="relative w-full max-w-4xl flex items-center justify-center">
-
+    <main className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center justify-center min-h-[calc(100vh-10rem)]">
+      <div className="relative w-72 h-72">
         {/* Lines connecting the hub to the benefits */}
         <div className="absolute w-px h-full bg-border/50 top-0 left-1/2 -translate-x-1/2"></div>
         <div className="absolute h-px w-full bg-border/50 top-1/2 left-0 -translate-y-1/2"></div>
         
         {/* Central Hub */}
-        <div className="relative z-10 flex flex-col items-center text-center p-8">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center p-8">
             <div className="relative inline-block bg-primary/10 p-5 rounded-full mb-4 shadow-lg primary-bar-glow">
                 <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
                 <Users className="w-12 h-12 text-primary relative" />
@@ -67,7 +66,7 @@ export default function CommunityPage() {
 
         {/* Benefits orbiting the hub */}
         {benefits.map((benefit, index) => (
-            <div key={index} className={`absolute ${benefit.position} w-56`}>
+            <div key={index} className={`absolute ${benefit.position} w-64`}>
                 <div className="glassmorphic p-4 rounded-lg shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
                     <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0 bg-primary/10 p-2 rounded-full">
