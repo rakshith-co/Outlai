@@ -44,15 +44,15 @@ export default function CommunityPage() {
         <div className="absolute h-px w-[calc(100%+4rem)] bg-border/50 left-[-2rem] top-1/2 -translate-y-1/2"></div>
         
         {/* Central Hub */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center p-8">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 h-full">
             <div className="relative inline-block bg-primary/10 p-5 rounded-full mb-4 shadow-lg primary-bar-glow">
                 <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
                 <Users className="w-12 h-12 text-muted-foreground relative" />
             </div>
-            <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">
               Join the Outlai Community
             </h1>
-            <p className="mt-4 max-w-md text-lg text-muted-foreground font-light">
+            <p className="mt-4 max-w-md text-base text-muted-foreground font-light">
               Connect, learn, and grow with a network of forward-thinking founders, marketers, and AI enthusiasts.
             </p>
             <div className="mt-8">
