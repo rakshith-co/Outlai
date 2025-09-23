@@ -32,8 +32,8 @@ export function Hero() {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-semibold text-base w-full sm:w-auto">
-            <Link href="#services">
-              See What We Do
+            <Link href="/community">
+              Join Our Community
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="font-semibold text-base w-full sm:w-auto glassmorphic border-white/20 hover:bg-white/10 hover:text-white shadow-lg shadow-white/20">
