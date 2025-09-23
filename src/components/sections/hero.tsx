@@ -23,7 +23,7 @@ export function Hero() {
         </div>
       </div>
       <div className="container mx-auto px-4 text-center relative z-10">
-        <h1 className={cn("font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight")}>
+        <h1 className={cn("font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-tight")}>
           You focus on your product.
           <br />
           We handle the rest.
@@ -49,7 +49,7 @@ export function Hero() {
         </p>
         <div className="mt-12 flex justify-center animate-fade-in-up">
             <Card className="glassmorphic rounded-2xl">
-                <CardContent className="p-2 md:p-4">
+                <CardContent className="p-2 md:p-4 px-4">
                     <div className="flex items-center space-x-2 md:space-x-4 text-xs md:text-sm font-light text-muted-foreground">
                         <span>AI SEO</span>
                         <div className="w-3 h-3 md:w-4 md:h-4 rounded-full orbit-glow flex items-center justify-center">
